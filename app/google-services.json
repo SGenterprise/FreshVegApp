@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "825095259853",
+    "firebase_url": "https://freshveg-46068.firebaseio.com",
+    "project_id": "freshveg-46068",
+    "storage_bucket": "freshveg-46068.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825095259853:android:fe155f9d27428782834b84",
+        "android_client_info": {
+          "package_name": "com.fv.freshvegapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825095259853-um36dac0qkf8fjfskgd1htvtskofgcq6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fv.freshvegapp",
+            "certificate_hash": "6b2a3c03b6f4e4155f562c924e3d143edc440435"
+          }
+        },
+        {
+          "client_id": "825095259853-96rhe2solhnvnsfv6mcforqcs949eela.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3AX9bZKkM9dyuimiKynKTwVECt11fXBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825095259853-96rhe2solhnvnsfv6mcforqcs949eela.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

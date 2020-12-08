@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:fitsSystemWindows="true"--><!--tools:context=".activities.NavigationActivity">-->
+
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/light_black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            >
+            <TextView
+                android:id="@+id/appbar_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/leftRight"
+                android:text="FreshVeg"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/helveticaneuelt"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/leftRight"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/light_black"
+                android:src="@drawable/ic_menu_black_24dp" />
+
+            <RelativeLayout
+                android:id="@+id/cart_lay_id"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/Cart_id"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/light_black"
+                android:src="@drawable/ic_baseline_shopping_cart_24"
+                 />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/noti_red_cart"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    app:cardCornerRadius="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="24dp"
+                    android:backgroundTint="@color/red"
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/txttt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/helveticaneuelt"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        />
+<LinearLayout
+    android:id="@+id/jjj"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_below="@+id/txttt"
+    android:layout_marginTop="20dp"
+    >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/hhh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/jjj"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:layout_marginBottom="25dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Airoli Office :"
+        android:textSize="12sp"
+       android:layout_gravity="center"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:text="FreshVeg, Sec 09, Airoli, Navi Mumbai, Maharashtra."
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:text="Pincode : 400708 (India)"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:text="Email : Freshvegcare@gmail.com Ph : 8104725416"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
+
+
+
+</RelativeLayout>

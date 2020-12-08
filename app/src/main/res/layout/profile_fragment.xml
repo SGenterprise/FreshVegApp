@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_circle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:lottie_rawRes="@raw/lottie_progressbar"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        app:lottie_loop="true"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        android:visibility="visible"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/verdana"
+                android:text="Profile"
+                android:paddingLeft="8dp"
+                android:textColor="@color/grey_dark"
+                android:textSize="20sp"
+                android:paddingStart="8dp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="end"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="4dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/Edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="10dp"
+
+        android:background="@color/clr_grey_text_transparent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_edit_black_24dp"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cancel_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@color/clr_grey_text_transparent"
+        android:layout_toLeftOf="@+id/Update_profile"
+        android:layout_marginRight="10dp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_clear_black_24dp"
+            android:layout_gravity="center"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Update_profile"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@color/clr_grey_text_transparent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_done_black_24dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+</LinearLayout>
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bstroke_rectengle"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:text="Name:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text=""
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    />
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text=""
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bstroke_rectengle"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:text="Email ID:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="visible"/>
+                <EditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text=""
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bstroke_rectengle"
+            android:visibility="gone"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:text="Age:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    />
+                <EditText
+                    android:id="@+id/edit_Age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text=""
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bstroke_rectengle"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:text="Number:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </RelativeLayout>
+

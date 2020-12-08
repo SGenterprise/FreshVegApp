@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D5D0D0">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleaddress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/newadd"
+        android:layout_marginTop="2dp"
+        android:background="#D5D0D0"
+        />
+        <TextView
+            android:id="@+id/newadd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:padding="15dp"
+            android:fontFamily="@font/helveticaneuelt"
+            android:background="@color/red"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:text="Add New Address"
+           />
+
+</RelativeLayout>

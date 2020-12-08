@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FreshVeg</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">SENDSTONE</string>
+    <string name="nav_header_subtitle">Sendstonecare@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="map_key" translatable="false">AIzaSyBNOH827b4qr-_1Bo3qkmjEFcxWeZIQmSE</string>
+    <string name="taxes_charges"><![CDATA[Taxes & Charges]]></string>
+
+</resources>

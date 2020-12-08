@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    tools:context=".Profile_fragment.Profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/tranperent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:elevation="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/helveticaneuelt"
+                android:text="Profile Info"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/name_id"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/tranperentb3"
+                android:fontFamily="@font/helveticaneuelt"
+                android:hint="Name*"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@android:color/white" />
+
+            <EditText
+            android:id="@+id/email_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/tranperentb3"
+            android:fontFamily="@font/helveticaneuelt"
+            android:hint="Email*"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/white" />
+
+            <TextView
+                android:id="@+id/num_id"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/tranperentb3"
+                android:fontFamily="@font/helveticaneuelt"
+                android:text=""
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@android:color/white" />
+
+<!--            <EditText-->
+<!--                android:id="@+id/age_id"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/tranperentb3"-->
+<!--                android:fontFamily="@font/helveticaneuelt"-->
+<!--                android:hint="Age"-->
+<!--                android:inputType="number"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textColorHint="@android:color/white" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/radio_g_id"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                >-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/male_id"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:button="@drawable/custom_radio_buttons"-->
+<!--                    android:fontFamily="@font/helveticaneuelt"-->
+<!--                    android:onClick="rbc"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="Male"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:theme="@style/RadioButtonStyle" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/female_id"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:button="@drawable/custom_radio_buttons"-->
+<!--                    android:fontFamily="@font/helveticaneuelt"-->
+<!--                    android:onClick="rbc"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="Female"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:theme="@style/RadioButtonStyle"-->
+<!--                    tools:ignore="OnClick" />-->
+<!--            </RadioGroup>-->
+
+            <RelativeLayout
+                android:id="@+id/submit_id"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:elevation="4dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/tranperentb2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SUBMIT"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+            <ProgressBar
+                android:id="@+id/progress_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

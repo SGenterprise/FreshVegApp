@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fv.freshvegapp">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Cart.PaytmentOptions" />
+        <activity android:name=".Orders.Order_Products_Recycleview" />
+        <activity android:name=".Address.Address_Update" />
+        <activity android:name=".Address.Address_Upload" />
+        <activity android:name=".Address.Address_Select_Activity" />
+        <activity android:name=".Upload_Pincodes" />
+        <activity android:name=".Firstactivity" />
+        <activity android:name=".CheckServieAvailable" />
+        <activity android:name=".Slider.Slide_Detail" />
+        <activity android:name=".Coupons.Coupon_Select_Activity" />
+        <activity android:name=".Profile_fragment.Profile" />
+        <activity android:name=".Sign_up" />
+        <activity android:name=".Otp" />
+        <activity android:name=".Splash_Screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_iidkVApFR36h0W" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_path" />
+        </provider>
+    </application>
+
+</manifest>

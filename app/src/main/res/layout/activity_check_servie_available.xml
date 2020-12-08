@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckServieAvailable">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/map_id"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        app:lottie_rawRes="@raw/map"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/map_id"
+        android:textSize="20dp"
+        android:fontFamily="@font/helveticaneuelt"
+        android:text="Check Service available in Your area"
+        />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t1"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:fontFamily="@font/helveticaneuelt"
+        android:layout_centerHorizontal="true"
+        android:text="Enter Area Pincode"
+        />
+
+
+   <RelativeLayout
+       android:id="@+id/lay_y"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/t2"
+       android:layout_marginTop="13dp"
+       >
+       <ImageView
+           android:id="@+id/select"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
+           android:layout_marginLeft="20dp"
+           android:padding="8dp"
+           android:src="@drawable/select"
+           android:layout_alignParentLeft="true" />
+   </RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/layu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/t2"
+    android:layout_marginTop="10dp"
+   android:gravity="center"
+    >
+    <EditText
+        android:id="@+id/pincode"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:fontFamily="@font/calibri"
+        android:maxLength="6"
+        android:text=""
+        />
+
+</RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/layu"
+        >
+    <Button
+        android:id="@+id/btn_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:background="@color/red"
+        />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

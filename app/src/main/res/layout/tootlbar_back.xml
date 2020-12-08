@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_black"
+    android:id="@+id/toolbar_back_lay"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <LinearLayout
+        android:id="@+id/iiit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+<LinearLayout
+    android:id="@+id/tt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout
+    android:id="@+id/back_update"
+    android:layout_width="50dp"
+    android:layout_gravity="center_vertical"
+    android:layout_height="50dp"
+
+    >
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:layout_marginLeft="8dp" />
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/appbar_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FreshVeg"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/helveticaneuelt"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/back_update"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        />
+
+</LinearLayout>
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

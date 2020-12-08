@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+        <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            app:showAsAction="never"
+            android:icon="@drawable/home"
+            />
+        <item
+            android:id="@+id/Profile"
+            android:icon="@drawable/user"
+            android:title="Profile"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/cart"
+            android:icon="@drawable/cart"
+            android:title="Cart"
+            app:showAsAction="never"/>
+                <item
+                    android:id="@+id/orders"
+                    android:icon="@drawable/order"
+                    android:title="My Orders"
+                    app:showAsAction="never"/>
+                <item
+                    android:id="@+id/address"
+                    android:icon="@drawable/address"
+                    android:title="Address"
+                    app:showAsAction="never"/>
+                <item
+            android:id="@+id/contactus"
+            android:icon="@drawable/customercare"
+            android:title="Contact us"
+            app:showAsAction="never"/>
+                <item
+                    android:id="@+id/privacy"
+                    android:icon="@drawable/file"
+                    android:title="Private Policy"
+                    app:showAsAction="never"/>
+                <item
+                    android:id="@+id/share"
+                    android:icon="@drawable/share"
+                    android:title="Share"
+                    app:showAsAction="never"/>
+
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/logout"
+                    android:title="Logout"
+                    app:showAsAction="never"/>
+
+
+        </group>
+
+</menu>

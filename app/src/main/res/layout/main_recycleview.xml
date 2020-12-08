@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:screenOrientation="portrait"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="2dp"
+        android:layout_above="@+id/new_lay_id"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            app:cardCornerRadius="4dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            >
+
+            <com.smarteist.autoimageslider.SliderView
+                android:layout_height="240dp"
+                android:layout_width="match_parent"
+                app:sliderStartAutoCycle="true"
+                app:sliderScrollTimeInSec="3"
+                app:sliderIndicatorUnselectedColor="#A97C7C7C"
+                app:sliderIndicatorSelectedColor="#FFFFFF"
+                app:sliderIndicatorRadius="1.4dp"
+                app:sliderIndicatorMarginBottom="20dp"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorAnimationDuration="1000"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAnimationDuration="1000"
+                android:visibility="gone"
+                android:id="@+id/imageSlider"/>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_recycleview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

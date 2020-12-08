@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:id="@+id/itemview2"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="4dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WELLCOME"
+            android:textAllCaps="true"
+            android:layout_marginTop="4dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/calibri"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardapply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/helveticaneuelt"
+            android:backgroundTint="@color/red2"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="Apply"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get "
+                android:textColor="@color/grey_dark"
+                />
+            <TextView
+                android:id="@+id/percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/grey_dark"
+                />
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="% instant discount upto Rs. "
+            android:textColor="@color/grey_dark"
+            />
+            <TextView
+                android:id="@+id/txtupto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/grey_dark"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/nomin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Minimum Cart Value. "
+            android:textColor="@color/grey_dark"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            />
+        <LinearLayout
+            android:id="@+id/minlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minimum Cart Value: Rs."
+            android:textColor="@color/grey_dark"
+            />
+            <TextView
+                android:id="@+id/minprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/grey_dark"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expiry: "
+                android:textColor="@color/grey_dark"
+                />
+            <TextView
+                android:id="@+id/expdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/grey_dark"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

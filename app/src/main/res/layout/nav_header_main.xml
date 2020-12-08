@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_black"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        >
+        <TextView
+            android:id="@+id/jj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="top"
+            android:fontFamily="@font/helveticaneuelt"
+            android:lines="1"
+            android:textStyle="bold"
+            android:maxLength="150"
+            android:text="Hey, "
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/name__id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/jj"
+            android:textStyle="bold"
+            android:layout_gravity="top"
+            android:lines="1"
+            android:fontFamily="@font/helveticaneuelt"
+            android:maxLength="150"
+            android:text="Shreedhar"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:id="@+id/currentlocation"
+            android:layout_width="45dp"
+            android:layout_height="34dp"
+            android:src="@drawable/gprs"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:layout_centerInParent="true"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="top"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/currentlocation"
+            android:layout_centerInParent="true"
+            android:layout_margin="4dp"
+            android:layout_toLeftOf="@+id/editcurrentlocation"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/helveticaneuelt"
+            android:textSize="14dp"
+            android:layout_gravity="top"
+            android:lines="1"
+            android:maxLength="150"
+            />
+
+        <ImageView
+            android:id="@+id/editcurrentlocation"
+            android:layout_width="45dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:layout_centerInParent="true"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:src="@drawable/pencil"
+            android:layout_gravity="top"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/grey"
+/>
+
+</LinearLayout>

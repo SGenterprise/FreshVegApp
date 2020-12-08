@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include
+        android:id="@+id/toolbar_back"
+        layout="@layout/tootlbar_back" />
+    <RelativeLayout
+        android:id="@+id/imlay"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/toolbar_back"
+        android:layout_marginBottom="8dp"
+        >
+        <com.zolad.zoominimageview.ZoomInImageView
+            android:id="@+id/img123"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imlay"
+        app:cardCornerRadius="4dp"
+        android:layout_margin="4dp"
+        >
+    <LinearLayout
+        android:id="@+id/laytitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:fontFamily="@font/helveticaneuelt"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/sdes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textSize="18sp"
+            android:fontFamily="@font/helveticaneuelt"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

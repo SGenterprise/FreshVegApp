@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#232323</color>
+    <color name="colorAccent">#03DAC5</color>
+
+<!--    <color name="colorPrimary">#FFFFFF</color>-->
+<!--    <color name="colorPrimaryDark">#FFFFFF</color>-->
+<!--    <color name="colorAccent">#FFFFFF</color>-->
+<!--    <color name="textInputLayout">#96ffffff</color>-->
+
+    <color name="white">#FFFFFF</color>
+    <color name="red2">#FF314A</color>
+    <color name="red">#FF314A</color>
+
+    <color name="grey">#505050</color>
+
+    <color name="mlight_grey">#DFDFDF</color>
+    <color name="light_grey">#989393</color>
+    <color name="grey_dark">#505050</color>
+    <color name="grey_toolbar">#88302D2D</color>
+    <color name="transparent_grey">#B03C3737</color>
+    <color name="black">#000000</color>
+    <color name="light_black">#232323</color>
+    <color name="dark_black">#131313</color>
+    <color name="trans_black">#A4101010</color>
+    <color name="blue">#2D44C1</color>
+
+    <color name="transblue">#E91A45A3</color>
+    <color name="b2">#9AE4E5EA</color>
+    <color name="b3">#83A6AAAE</color>
+    <color name="clr_otp_bg">#535288</color>
+    <color name="clr_otp_btn_yellow">#F8CD06</color>
+    <color name="clr_white_text">#FFFFFF</color>
+    <color name="clr_grey_text">#D3D3D3</color>
+    <color name="clr_grey_text_transparent">#80D3D3D3</color>
+
+    <color name="lightblue">#78DAD0</color>
+
+    <color name="darkb">#959DA3</color>
+
+    <color name="voilet">#9128A3</color>
+
+    <color name="grey_lit">#B5B3B3</color>
+    <color name="bl">#9700020B</color>
+
+    <color name="yellow">#FFE504</color>
+    <color name="dd1">#53BA27</color>
+    <color name="dd2">#39672F</color>
+    <color name="green">#7DCC22</color>
+
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+
+    <color name="gradient_start_color_green">#1EA523</color>
+    <color name="gradient_end_color_green">#23ED2B</color>
+
+    <!-- colors for tab and screent text -->
+
+    <color name="tab_indicator_gray">#c0c0c0</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
+
+
+
+
+
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#D5D0D0"
+    tools:context=".Sign_up">
+
+    <Spinner
+        android:id="@+id/spinnerCountries"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tranperent"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_black"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:fontFamily="@font/helveticaneuelt"
+            android:text="We will send you One time SMS message for verification."
+            android:textStyle="bold"
+            android:textSize="14sp"
+            />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginBottom="20dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="+91"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/calibri"
+    />
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="8dp"
+        android:fontFamily="@font/calibri"
+        android:hint="Mobile Number"
+        android:singleLine="true"
+        android:inputType="number"
+        android:maxLines="1"
+        android:maxLength="10"
+        android:textSize="18sp" />
+</LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ca"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/calibri"
+        android:background="@color/light_grey"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/buttonContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ca"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/calibri"
+        android:background="@color/red"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+</RelativeLayout>
