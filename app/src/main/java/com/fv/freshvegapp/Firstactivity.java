@@ -94,22 +94,22 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
         editor.apply();
 
         SharedPreferences preffx = getSharedPreferences("coupon",MODE_PRIVATE);
-        SharedPreferences.Editor editorrfr = preferences.edit();
+        SharedPreferences.Editor editorrfr = preffx.edit();
         couponkey = preffx.getString("couponcode", "");
         editorrfr.apply();
 
         SharedPreferences preff = getSharedPreferences("Cart_Items",MODE_PRIVATE);
-        SharedPreferences.Editor editorrr = preferences.edit();
+        SharedPreferences.Editor editorrr = preff.edit();
         cart = preff.getString("cart", "");
         editorrr.apply();
 
         SharedPreferences prefselectcart = getSharedPreferences("cart_select",MODE_PRIVATE);
-        SharedPreferences.Editor editorrrcart = preferences.edit();
+        SharedPreferences.Editor editorrrcart = prefselectcart.edit();
         select_cart = prefselectcart.getString("selectedcart", "");
         editorrrcart.apply();
 
         SharedPreferences preferencesorder = getSharedPreferences("Myorder",MODE_PRIVATE);
-        SharedPreferences.Editor editordorder = preferences.edit();
+        SharedPreferences.Editor editordorder = preferencesorder.edit();
         orderkey = preferencesorder.getString("order", "");
         editordorder.apply();
 
@@ -122,14 +122,14 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
         }
         else if (couponkey.equals("1")){
             cart_frag();
-            preff = getSharedPreferences("coupon", MODE_PRIVATE);
-            SharedPreferences.Editor editorr = preff.edit();
+            SharedPreferences prefffj = getSharedPreferences("coupon", MODE_PRIVATE);
+            SharedPreferences.Editor editorr = prefffj.edit();
             editorr.clear();
             editorr.apply();
         }else if (cart.equals("1")){
             cart_frag();
-            preff = getSharedPreferences("Cart_Items", MODE_PRIVATE);
-            SharedPreferences.Editor editorr = preff.edit();
+            SharedPreferences prefc = getSharedPreferences("Cart_Items", MODE_PRIVATE);
+            SharedPreferences.Editor editorr = prefc.edit();
             editorr.clear();
             editorr.apply();
         }
