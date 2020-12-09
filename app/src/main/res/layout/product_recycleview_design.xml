@@ -5,26 +5,68 @@
     android:layout_width="wrap_content"
     android:id="@+id/itemview2"
     android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="8dp"
     >
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
+
         >
 
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="140dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="5dp"
+            >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="22dp"
+                android:src="@drawable/discountpnggreen"
+                />
+                    <TextView
+                        android:id="@+id/off"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:fontFamily="@font/calibri"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:textColor="@color/white"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="% Off"
+                        android:fontFamily="@font/calibri"
+                        android:layout_toRightOf="@+id/off"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/white"
+                        />
+                </RelativeLayout>
             <ImageView
                 android:id="@+id/proimage"
-                android:layout_marginStart="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                 />
+                android:layout_width="140dp"
+                android:layout_height="100dp" />
+
             <LinearLayout
                 android:id="@+id/greyback"
                 android:layout_marginStart="5dp"
@@ -44,21 +86,22 @@
                     android:gravity="center"
                     android:visibility="gone"
                     />
-
             </LinearLayout>
-
+            </LinearLayout>
         </RelativeLayout>
+        </androidx.cardview.widget.CardView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
             >
          <TextView
              android:id="@+id/txt_cat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:layout_marginTop="4dp"
+             android:layout_marginTop="5dp"
             android:text="Category Name"
             android:textColor="@color/black"
             android:fontFamily="@font/helveticaneuelt"
@@ -69,20 +112,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Product name"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
                 android:textSize="15sp"
                 />
 
-
-      // chnage this shit
                     <TextView
                         android:id="@+id/quantity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Product Quantity"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="5dp"
                         android:textColor="@color/grey"
                         android:fontFamily="@font/helveticaneuelt"
                         android:textSize="13sp"
@@ -93,7 +134,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Product Price"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginTop="5dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:fontFamily="@font/helveticaneuelt"
@@ -119,6 +160,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="8dp"
             >
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
