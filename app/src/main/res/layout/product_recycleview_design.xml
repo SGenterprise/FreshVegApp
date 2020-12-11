@@ -151,7 +151,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:fontFamily="@font/calibri"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     />
                 <TextView
                     android:id="@+id/price"
@@ -160,17 +160,18 @@
                     android:text="0"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    android:layout_marginEnd="5dp"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     />
                 <TextView
                     android:id="@+id/rupeesym"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" ₹"
+                    android:text="₹"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
                     />
                 <TextView
                     android:id="@+id/mrp"
@@ -179,7 +180,7 @@
                     android:text="0"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
                     />
             </LinearLayout>
 

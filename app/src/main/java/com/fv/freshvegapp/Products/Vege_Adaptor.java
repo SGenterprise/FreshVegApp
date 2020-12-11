@@ -2,6 +2,7 @@ package com.fv.freshvegapp.Products;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class Vege_Adaptor extends RecyclerView.Adapter<Vege_Adaptor.ViewHolder> 
 
 private Context context;
 private List<UploadPojo> uploads;
+int offint = 0,value =0;
 
 public Vege_Adaptor(Context context, List<UploadPojo> uploads) {
         this.uploads = uploads;
@@ -82,6 +84,14 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     holder.price.setText(upload.getPrice());
     holder.mrp.setText(Mrp);
     holder.quantity.setText(upload.getQuantity());
+
+    offint = 100*Integer.parseInt(Price)/Integer.parseInt(Mrp);
+    value = 100 - offint;
+
+    holder.off.setText(String.valueOf(value));
+
+    holder.mrp.setPaintFlags(holder.mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+    holder.rupsym.setPaintFlags(holder.rupsym.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
     DatabaseReference OOSref= FirebaseDatabase.getInstance().getReference().child("Uploads").child(upload.getCode());
     OOSref.addValueEventListener(new ValueEventListener() {
