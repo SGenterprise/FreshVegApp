@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fv.freshvegapp.Cart.Cart_Fragment;
@@ -34,7 +34,7 @@ import java.util.List;
 public class Product_recycleview extends Fragment {
 
     private RecyclerView recyclerView;
-    private Product_Adaptor adapter;
+    private Vege_Adaptor adapter;
     private DatabaseReference mDatabase;
     private DatabaseReference reff;
     private ProgressDialog progressDialog;
@@ -52,7 +52,7 @@ public class Product_recycleview extends Fragment {
         checkout = (RelativeLayout) view.findViewById(R.id.checkoutlay);
         recyclerView = (RecyclerView) view.findViewById(R.id.product_recycleview1);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         searchedit = view.findViewById(R.id.search_edit_box);
         progressDialog = new ProgressDialog(getContext());
 
@@ -85,7 +85,7 @@ public class Product_recycleview extends Fragment {
                         uploads.add(upload);
                     }
                 }
-                adapter = new Product_Adaptor(getActivity(), uploads);
+                adapter = new Vege_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
@@ -168,7 +168,7 @@ public class Product_recycleview extends Fragment {
                         uploads.add(upload);
                     }
                 }
-                adapter = new Product_Adaptor(getActivity(), uploads);
+                adapter = new Vege_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
@@ -197,7 +197,7 @@ public class Product_recycleview extends Fragment {
                         uploads.add(upload);
                     }
                 }
-                adapter = new Product_Adaptor(getActivity(), uploads);
+                adapter = new Vege_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }

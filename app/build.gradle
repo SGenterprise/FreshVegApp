@@ -25,7 +25,7 @@ repositories {
 android {
     signingConfigs {
         debug {
-            storeFile file('C:\\Users\\shree\\Desktop\\finalkey')
+            storeFile file('D:\\FreshVeg\\app signin key\\finalkey')
             storePassword 's@@9892793664'
             keyAlias 'keyfinal0'
             keyPassword 's@@9892793664'

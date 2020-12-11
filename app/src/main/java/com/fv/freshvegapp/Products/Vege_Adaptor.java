@@ -30,12 +30,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 import java.util.Objects;
 
-public class Product_Adaptor extends RecyclerView.Adapter<Product_Adaptor.ViewHolder> {
+public class Vege_Adaptor extends RecyclerView.Adapter<Vege_Adaptor.ViewHolder> {
 
 private Context context;
 private List<UploadPojo> uploads;
 
-public Product_Adaptor(Context context, List<UploadPojo> uploads) {
+public Vege_Adaptor(Context context, List<UploadPojo> uploads) {
         this.uploads = uploads;
         this.context = context;
         }
@@ -55,7 +55,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
 
     final DatabaseReference reff = FirebaseDatabase.getInstance().getReference("Cart_Items").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
     final CartPojo cartPojo = new CartPojo();
-    final String CategoryName,ProductName,ProductImage,Quantity,Price,Count;
+    final String CategoryName,ProductName,ProductImage,Quantity,Price,Mrp,Count;
     final String Cart_CategoryName,Cart_ProductName,Cart_ProductImage,Cart_Quantity,Cart_Price;
     Cart_CategoryName = cartPojo.getCategoryName();
     Cart_ProductName = cartPojo.getProductName();
@@ -69,6 +69,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     ProductImage = upload.getProduct_img();
     Quantity = upload.getQuantity();
     Price = upload.getPrice();
+    Mrp  = upload.getMrp();
     Count = upload.getCount();
 
         holder.Cat_name.setText(upload.getCategory());
@@ -79,6 +80,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
 
     holder.pro_name.setText(upload.getProduct());
     holder.price.setText(upload.getPrice());
+    holder.mrp.setText(Mrp);
     holder.quantity.setText(upload.getQuantity());
 
     DatabaseReference OOSref= FirebaseDatabase.getInstance().getReference().child("Uploads").child(upload.getCode());
@@ -256,7 +258,7 @@ public int getItemCount() {
 
 class ViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView Cat_name,pro_name,price,quantity,add,minus,plus;
+    public TextView Cat_name,pro_name,mrp,off,price,quantity,add,minus,plus,rupsym;
     public ImageView imageView;
     public TextView textcount,textoos;
     public LinearLayout laypm,addtocartlay,greyback;
@@ -268,6 +270,9 @@ class ViewHolder extends RecyclerView.ViewHolder {
         imageView = (ImageView) itemView.findViewById(R.id.proimage);
         pro_name = (TextView) itemView.findViewById(R.id.pro_name);
         price = (TextView) itemView.findViewById(R.id.price);
+        rupsym = (TextView) itemView.findViewById(R.id.rupeesym);
+        mrp  = (TextView) itemView.findViewById(R.id.mrp);
+        off  = (TextView) itemView.findViewById(R.id.off);
         quantity = (TextView) itemView.findViewById(R.id.quantity);
         add= (TextView) itemView.findViewById(R.id.Add);
         minus = (TextView) itemView.findViewById(R.id.minus);

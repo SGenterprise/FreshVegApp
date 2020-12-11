@@ -356,7 +356,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
 
 //Category
     private void showhome() {
-        fragment = new Product_recycleview();
+        fragment = new Main_recycleview();
         cart();
         if (fragment != null){
             FragmentManager manager = getSupportFragmentManager();
@@ -364,7 +364,6 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
             appBarTV.setText("FreshVeg");
         }
     }
-
 
     // direct products screen
 //    private void showhome() {
@@ -408,16 +407,14 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
 
         if (id == R.id.home) {
             appBarTV.setText("FreshVeg");
-            fragment = new Product_recycleview();
+            fragment = new Main_recycleview();
             cart();
             cartlay.setVisibility(View.VISIBLE);
-
 
         } else if (id == R.id.Profile) {
             appBarTV.setText("Profile");
             fragment = new ProFileFragment();
             cartlay.setVisibility(View.GONE);
-
 
         } else if (id == R.id.cart) {
             appBarTV.setText("Cart");
