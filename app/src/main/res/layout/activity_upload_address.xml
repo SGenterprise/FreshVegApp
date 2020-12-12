@@ -123,7 +123,7 @@
                             android:lines="1"
                             android:imeOptions="actionDone"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14dp"
+                            android:textSize="14sp"
                             />
                         <EditText
                             android:id="@+id/num"
@@ -136,38 +136,15 @@
                             android:hint="Number"
                             android:textColor="@color/black"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14dp"
+                            android:textSize="14sp"
                             />
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="5dp"
-                        >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Address: "
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14dp"
-                            />
-                        <TextView
-                            android:id="@+id/ad1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:maxEms="150"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14dp"
-                            />
-                    </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:padding="10dp"
+                        android:padding="5dp"
                         >
 
                         <EditText
@@ -196,7 +173,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:padding="5dp"
                             >
 
                             <EditText
@@ -210,14 +186,13 @@
                                 android:lines="1"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/helveticaneuelt"
-                                android:textSize="14dp"
+                                android:textSize="14sp"
                                 />
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:padding="5dp"
                             >
 
                             <EditText
@@ -231,9 +206,10 @@
                                 android:lines="1"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/helveticaneuelt"
-                                android:textSize="14dp"
+                                android:textSize="14sp"
                                 />
                         </LinearLayout>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -255,6 +231,33 @@
                             android:textSize="14dp"
                             />
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address: "
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/helveticaneuelt"
+                            android:textSize="14sp"
+                            />
+                        <TextView
+                            android:id="@+id/ad1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxEms="150"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/helveticaneuelt"
+                            android:textSize="14sp"
+                            />
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
