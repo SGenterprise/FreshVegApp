@@ -67,7 +67,6 @@ public class CalenderApater extends RecyclerView.Adapter<CalenderApater.MyViewHo
                 SharedPreferences.Editor editor = preferences.edit();
                 String a = calenderModel.getFulldate();
                 editor.putString("fulldate",a);
-                Toast.makeText(context,a, Toast.LENGTH_SHORT).show();
                 editor.apply();
 
                 notifyDataSetChanged();
@@ -125,7 +124,6 @@ public class CalenderApater extends RecyclerView.Adapter<CalenderApater.MyViewHo
  //               String a = day.getText().toString()+" "+date.getText().toString();
                 String a = fulldate;
                 editor.putString("fulldate",a);
-                Toast.makeText(context,a, Toast.LENGTH_SHORT).show();
                 editor.apply();
 
             } else {

@@ -130,7 +130,7 @@ public class Cart_Fragment extends Fragment
                 Radiogroup.setVisibility(View.VISIBLE);
                 CalenderRecycleView.setVisibility(View.VISIBLE);
                 textshu.setVisibility(View.GONE);
-                chosedelivery.setVisibility(View.GONE);
+                chosedelivery.setVisibility(View.VISIBLE);
                 delivery_time.setVisibility(View.GONE);
                 dateTextView.setVisibility(View.GONE);
                 deliverytill.setVisibility(View.GONE);

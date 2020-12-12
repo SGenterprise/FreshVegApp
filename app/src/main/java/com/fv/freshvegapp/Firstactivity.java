@@ -462,7 +462,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 intent.setType("bbbback/png");
                 intent.setType("text/plain");
-                String shareBody = "Download Our App now :- https://play.google.com/store/apps/details?id=com.example.freshveg&hl=en";
+                String shareBody = "Download Our App now :- https://play.google.com/store/apps/details?id=com.fv.freshvegapp&hl=en";
                 intent.putExtra(Intent.EXTRA_TEXT, shareBody);
 
                 startActivity(Intent.createChooser(intent, "Share bbbback via"));
