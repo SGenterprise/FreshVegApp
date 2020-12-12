@@ -2,7 +2,31 @@ package com.fv.freshvegapp.Cart;
 
 public class CartPojo {
 
-    String CategoryName,ProductName,product_img,Quantity,Subprice,Price,Count;
+    String CategoryName,ProductName,product_img,Quantity,Subprice,Price,mrp,rs,off,Count;
+
+    public String getMrp() {
+        return mrp;
+    }
+
+    public void setMrp(String mrp) {
+        this.mrp = mrp;
+    }
+
+    public String getRs() {
+        return rs;
+    }
+
+    public void setRs(String rs) {
+        this.rs = rs;
+    }
+
+    public String getOff() {
+        return off;
+    }
+
+    public void setOff(String off) {
+        this.off = off;
+    }
 
     public String getSubprice() {
         return Subprice;

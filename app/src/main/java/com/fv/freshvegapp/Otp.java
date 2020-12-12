@@ -211,7 +211,7 @@ public class Otp extends AppCompatActivity {
                             });
 
                         } else {
-                        //    Toast.makeText(Otp.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(Otp.this,"Incorrect OTP", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
@@ -250,7 +250,7 @@ public class Otp extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(FirebaseException e) {
-            Toast.makeText(Otp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(Otp.this,"Incorrect OTP", Toast.LENGTH_SHORT).show();
 
         }
     };

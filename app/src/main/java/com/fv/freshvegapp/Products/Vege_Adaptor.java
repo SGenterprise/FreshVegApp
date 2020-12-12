@@ -58,12 +58,13 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     final DatabaseReference reff = FirebaseDatabase.getInstance().getReference("Cart_Items").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
     final CartPojo cartPojo = new CartPojo();
     final String CategoryName,ProductName,ProductImage,Quantity,Price,Mrp,Count;
-    final String Cart_CategoryName,Cart_ProductName,Cart_ProductImage,Cart_Quantity,Cart_Price;
+    final String Cart_CategoryName,Cart_ProductName,Cart_ProductImage,Cart_Quantity,Cart_Price,Cart_Mrp;
     Cart_CategoryName = cartPojo.getCategoryName();
     Cart_ProductName = cartPojo.getProductName();
     Cart_ProductImage = cartPojo.getProduct_img();
     Cart_Quantity = cartPojo.getQuantity();
     Cart_Price = cartPojo.getPrice();
+    Cart_Mrp = cartPojo.getMrp();
 
     final UploadPojo upload = uploads.get(position);
     CategoryName = upload.getCategory();
@@ -105,36 +106,9 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
                 holder.greyback.setVisibility(View.VISIBLE);
                 holder.textoos.setVisibility(View.VISIBLE);
 
-                Query query = reff.orderByChild("productName").equalTo(ProductName);
-                query.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot ds: snapshot.getChildren()){
-                            ds.getRef().child("categoryName").removeValue();
-                            ds.getRef().child("count").removeValue();
-                            ds.getRef().child("price").removeValue();
-                            ds.getRef().child("productName").removeValue();
-                            ds.getRef().child("product_img").removeValue();
-                            ds.getRef().child("quantity").removeValue();
-                            ds.getRef().child("subprice").removeValue();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
 
             }
-//            else  (OOS.equals("instock")){
-////                    holder.add.setVisibility(View.VISIBLE);
-////                    holder.greyback.setVisibility(View.GONE);
-////                    holder.textoos.setVisibility(View.GONE);
-//            }
 
-//            notifyDataSetChanged();
         }
 
         @Override
@@ -177,6 +151,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             cartPojo.setProduct_img(ProductImage);
             cartPojo.setProductName(ProductName);
             cartPojo.setQuantity(Quantity);
+            cartPojo.setMrp(Mrp);
             int result = (Integer.valueOf(Price))*(Integer.valueOf(a));
             String p = (String.valueOf(result));
             cartPojo.setSubprice(p);
@@ -223,6 +198,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
                 String p = (String.valueOf(result));
                 cartPojo.setSubprice(p);
                 cartPojo.setPrice(Price);
+                cartPojo.setMrp(Mrp);
                 cartPojo.setCount(holder.textcount.getText().toString());
                 reff.child(ProductName).setValue(cartPojo);
                 notifyDataSetChanged();
@@ -253,6 +229,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             String p = (String.valueOf(result));
             cartPojo.setSubprice(p);
             cartPojo.setPrice(Price);
+            cartPojo.setMrp(Mrp);
             cartPojo.setCount(holder.textcount.getText().toString());
             reff.child(ProductName).setValue(cartPojo);
             notifyDataSetChanged();

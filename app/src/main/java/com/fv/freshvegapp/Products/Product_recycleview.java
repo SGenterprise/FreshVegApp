@@ -1,6 +1,7 @@
 package com.fv.freshvegapp.Products;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,17 +32,19 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class Product_recycleview extends Fragment {
 
     private RecyclerView recyclerView;
-    private Vege_Adaptor adapter;
+    private Vege_landscape_Adaptor adapter;
     private DatabaseReference mDatabase;
     private DatabaseReference reff;
     private ProgressDialog progressDialog;
     private List<UploadPojo> uploads;
     private EditText searchedit;
     RelativeLayout checkout;
-    String a = "Fresh Vegetables";
+    String a = "";
     Query queryss;
 
     @Nullable
@@ -52,7 +55,7 @@ public class Product_recycleview extends Fragment {
         checkout = (RelativeLayout) view.findViewById(R.id.checkoutlay);
         recyclerView = (RecyclerView) view.findViewById(R.id.product_recycleview1);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),1));
         searchedit = view.findViewById(R.id.search_edit_box);
         progressDialog = new ProgressDialog(getContext());
 
@@ -63,10 +66,10 @@ public class Product_recycleview extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReference("Uploads");
         reff = FirebaseDatabase.getInstance().getReference("Cart_Items").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-//        SharedPreferences preferences = getActivity().getSharedPreferences("MYPREFS",MODE_PRIVATE);
-//        SharedPreferences.Editor editor = preferences.edit();
-//        a = preferences.getString("cat123", "");
-//        editor.apply();
+        SharedPreferences preferences = getActivity().getSharedPreferences("Main",MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        a = preferences.getString("data", "");
+        editor.apply();
 
 //for oos downlist
         queryss = mDatabase.orderByChild("oos").startAt("instock");
@@ -85,7 +88,7 @@ public class Product_recycleview extends Fragment {
                         uploads.add(upload);
                     }
                 }
-                adapter = new Vege_Adaptor(getActivity(), uploads);
+                adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
@@ -168,7 +171,7 @@ public class Product_recycleview extends Fragment {
                         uploads.add(upload);
                     }
                 }
-                adapter = new Vege_Adaptor(getActivity(), uploads);
+                adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
@@ -197,7 +200,7 @@ public class Product_recycleview extends Fragment {
                         uploads.add(upload);
                     }
                 }
-                adapter = new Vege_Adaptor(getActivity(), uploads);
+                adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
