@@ -74,6 +74,18 @@
                     android:textAllCaps="true"
                     android:textSize="16sp"
                     android:text="Add Address" />
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:lines="1"
+                            android:fontFamily="@font/calibri"
+                            android:textSize="14sp"
+                            android:text=""
+                            android:visibility="gone"/>
+
                 <RelativeLayout
                     android:id="@+id/address2"
                     android:layout_width="match_parent"
@@ -118,6 +130,18 @@
                     android:textSize="14sp"
                     android:text=""
                     android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:lines="1"
+                        android:fontFamily="@font/calibri"
+                        android:textSize="14sp"
+                        android:text=""
+                        android:visibility="gone"/>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

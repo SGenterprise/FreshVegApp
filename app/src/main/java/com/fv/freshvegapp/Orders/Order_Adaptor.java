@@ -2,6 +2,7 @@ package com.fv.freshvegapp.Orders;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
@@ -9,10 +10,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fv.freshvegapp.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -52,6 +62,8 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.no_packed.setVisibility(View.VISIBLE);
         holder.no_ontheway.setVisibility(View.VISIBLE);
         holder.no_delivered.setVisibility(View.VISIBLE);
+        holder.Ordercancel.setVisibility(View.VISIBLE);
+        holder.Ordernotcancel.setVisibility(View.GONE);
     }
     else if (upload.getOrderstatus().equals("In Process")){
         holder.placed.setVisibility(View.VISIBLE);
@@ -59,6 +71,8 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.no_packed.setVisibility(View.VISIBLE);
         holder.no_ontheway.setVisibility(View.VISIBLE);
         holder.no_delivered.setVisibility(View.VISIBLE);
+        holder.Ordercancel.setVisibility(View.GONE);
+        holder.Ordernotcancel.setVisibility(View.VISIBLE);
     }
     else if (upload.getOrderstatus().equals("Packed")){
         holder.placed.setVisibility(View.VISIBLE);
@@ -66,6 +80,8 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.packed.setVisibility(View.VISIBLE);
         holder.no_ontheway.setVisibility(View.VISIBLE);
         holder.no_delivered.setVisibility(View.VISIBLE);
+        holder.Ordercancel.setVisibility(View.GONE);
+        holder.Ordernotcancel.setVisibility(View.VISIBLE);
     }
     else if (upload.getOrderstatus().equals("On The Way")){
         holder.placed.setVisibility(View.VISIBLE);
@@ -73,6 +89,9 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.packed.setVisibility(View.VISIBLE);
         holder.ontheway.setVisibility(View.VISIBLE);
         holder.no_delivered.setVisibility(View.VISIBLE);
+        holder.Ordercancel.setVisibility(View.GONE);
+        holder.Ordernotcancel.setVisibility(View.VISIBLE);
+
     }
     else if (upload.getOrderstatus().equals("Delivered")){
         holder.placed.setVisibility(View.VISIBLE);
@@ -80,6 +99,8 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.packed.setVisibility(View.VISIBLE);
         holder.ontheway.setVisibility(View.VISIBLE);
         holder.delivered.setVisibility(View.VISIBLE);
+        holder.Ordercancel.setVisibility(View.GONE);
+        holder.Ordernotcancel.setVisibility(View.GONE);
     }
     else if (upload.getOrderstatus().equals("Cancelled")){
         holder.placed.setVisibility(View.VISIBLE);
@@ -88,6 +109,8 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.ontheway.setVisibility(View.VISIBLE);
         holder.delivered.setVisibility(View.GONE);
         holder.cancel.setVisibility(View.VISIBLE);
+        holder.Ordercancel.setVisibility(View.GONE);
+        holder.Ordernotcancel.setVisibility(View.GONE);
     }
     holder.itemView.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -136,6 +159,97 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             context.startActivity(i);
         }
     });
+
+    holder.Ordercancel.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
+                builder1.setMessage("Click 'Confirm' to Cancel order");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Confirm",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                DatabaseReference reffg;
+                                reffg = FirebaseDatabase.getInstance().getReference("Orders").child(upload.getUserid());
+                                Query queryy = reffg.orderByChild("orderid").equalTo(upload.getOrderid());
+                                queryy.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for (DataSnapshot ds: snapshot.getChildren()){
+                                            ds.getRef().child("orderstatus").setValue("Cancelled");
+                                            ds.getRef().child("coupan").removeValue();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+                                // move order to complete orders.
+                                FirebaseDatabase.getInstance().getReference("All_Orders").child(upload.getOrderid())
+                                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                FirebaseDatabase.getInstance().getReference("Completed_Orders").child(upload.getOrderid()).setValue(dataSnapshot.getValue());
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                FirebaseDatabase.getInstance().getReference("All_Orders").child(upload.getOrderid()).removeValue();
+
+                                // update status
+                                DatabaseReference reff;
+                                reff = FirebaseDatabase.getInstance().getReference("Completed_Orders");
+                                Query query = reff.orderByChild("orderid").equalTo(upload.getOrderid());
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for (DataSnapshot ds: snapshot.getChildren()){
+                                            ds.getRef().child("orderstatus").setValue("Cancelled");
+                                            ds.getRef().child("coupan").removeValue();
+
+                                            Toast.makeText(context, "Order Cancelled Successfully", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+                                dialog.cancel();
+                                notifyDataSetChanged();
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "Back",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
+                // Add deliverey agent user id here
+
+            }
+        }
+    });
         }
 
 @Override
@@ -145,7 +259,7 @@ public int getItemCount() {
 
 class ViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView orderdate,OrderID,TotalAmount,OrderStatus;
+    public TextView orderdate,OrderID,TotalAmount,OrderStatus,Ordercancel,Ordernotcancel;
     public LinearLayout placed,inprocess,packed,ontheway,delivered,cancel,no_inprocess,no_packed,no_ontheway,no_delivered;
 
     public ViewHolder(View itemView) {
@@ -165,6 +279,8 @@ class ViewHolder extends RecyclerView.ViewHolder {
         no_packed = (LinearLayout) itemView.findViewById(R.id.no_packed);
         no_ontheway = (LinearLayout) itemView.findViewById(R.id.no_ontheway);
         no_delivered = (LinearLayout) itemView.findViewById(R.id.no_delivered);
+        Ordercancel = (TextView) itemView.findViewById(R.id.cancel_order);
+        Ordernotcancel = (TextView) itemView.findViewById(R.id.not_cancel);
 
     }
 }

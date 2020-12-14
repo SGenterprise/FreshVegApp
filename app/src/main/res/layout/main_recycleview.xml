@@ -85,6 +85,7 @@
                 android:layout_marginBottom="4dp"
                 app:cardCornerRadius="8dp"
                 android:scrollbars="none"
+                android:visibility="gone"
                 >
 
                 <LinearLayout

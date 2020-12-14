@@ -2,6 +2,7 @@ package com.fv.freshvegapp.Cart;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class Cart_Adaptor extends RecyclerView.Adapter<Cart_Adaptor.ViewHolder> 
 
 private Context context;
 private List<CartPojo> uploads;
+int offint = 0,value =0;
 
 public Cart_Adaptor(Context context, List<CartPojo> uploads) {
         this.uploads = uploads;
@@ -44,7 +46,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
 
     final DatabaseReference reff = FirebaseDatabase.getInstance().getReference("Cart_Items").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
     final CartPojo cartPojo = new CartPojo();
-    final String CategoryName,ProductImage,Price,Quantity,ProductName,Count,Subtotal;
+    final String CategoryName,ProductImage,Mrp,Price,Quantity,ProductName,Count,Subtotal;
     final CartPojo upload = uploads.get(position);
 
     CategoryName = upload.getCategoryName();
@@ -52,6 +54,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     ProductName = upload.getProductName();
     Quantity = upload.getQuantity();
     Price = upload.getPrice();
+    Mrp = upload.getMrp();
     Count = upload.getCount();
     Subtotal = upload.getSubprice();
 
@@ -61,10 +64,19 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     holder.quantity.setText(Quantity);
     holder.subprice.setText(Subtotal);
     holder.textcount.setText(Count);
+    holder.mrp.setText(Mrp);
     Glide.with(context)
             .load(ProductImage)
             .centerCrop()
             .into(holder.imageView);
+
+    offint = 100*Integer.parseInt(Price)/Integer.parseInt(Mrp);
+    value = 100 - offint;
+
+    holder.off.setText(String.valueOf(value));
+
+    holder.mrp.setPaintFlags(holder.mrp.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+    holder.rupsym.setPaintFlags(holder.rupsym.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
     holder.add.setVisibility(View.GONE);
     holder.laypm.setVisibility(View.VISIBLE);
@@ -89,9 +101,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 reff.child(ProductName).removeValue();
-//                                ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
-//                                        .replace(R.id.f_container, new Cart_Fragment())
-//                                        .commit();
+
                             }
                         })
                         .setNegativeButton("No", null)
@@ -110,6 +120,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
                 cartPojo.setSubprice(p);
                 holder.subprice.setText(Subtotal);
                 cartPojo.setPrice(Price);
+                cartPojo.setMrp(Mrp);
                 cartPojo.setCount(holder.textcount.getText().toString());
                 reff.child(ProductName).setValue(cartPojo);
                 notifyDataSetChanged();
@@ -139,12 +150,10 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             cartPojo.setSubprice(p);
             holder.subprice.setText(Subtotal);
             cartPojo.setPrice(Price);
+            cartPojo.setMrp(Mrp);
             cartPojo.setCount(holder.textcount.getText().toString());
             reff.child(upload.getProductName()).setValue(cartPojo);
 
-//            ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
-//                    .replace(R.id.f_container, new Cart_Fragment())
-//                    .commit();
         }
     });
 }
@@ -156,7 +165,7 @@ public int getItemCount() {
 
 class ViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView Cat_name,pro_name,price,quantity,add,minus,plus,subprice,couponAmt;
+    public TextView Cat_name,pro_name,mrp,price,quantity,add,minus,plus,subprice,couponAmt,off,rupsym;
     public ImageView imageView;
     public TextView textcount;
     public LinearLayout laypm;
@@ -166,6 +175,9 @@ class ViewHolder extends RecyclerView.ViewHolder {
         Cat_name = (TextView) itemView.findViewById(R.id.txt_cat);
         imageView = (ImageView) itemView.findViewById(R.id.proimage);
         pro_name = (TextView) itemView.findViewById(R.id.pro_name);
+        mrp = (TextView) itemView.findViewById(R.id.mrp);
+        rupsym = (TextView) itemView.findViewById(R.id.rupeesym);
+        off  = (TextView) itemView.findViewById(R.id.off);
         price = (TextView) itemView.findViewById(R.id.price);
         quantity = (TextView) itemView.findViewById(R.id.quantity);
         add= (TextView) itemView.findViewById(R.id.Add);

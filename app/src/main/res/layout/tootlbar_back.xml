@@ -43,16 +43,15 @@
         android:id="@+id/appbar_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FreshVeg"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"
-        android:fontFamily="@font/helveticaneuelt"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_toRightOf="@+id/back_update"
-        android:textSize="18sp"
         android:layout_centerVertical="true"
-        />
+        android:layout_gravity="center_vertical"
+        android:layout_toRightOf="@+id/back_update"
+        android:fontFamily="@font/helveticaneuelt"
+        android:gravity="center_vertical"
+        android:text="FreshVeg"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
     </LinearLayout>

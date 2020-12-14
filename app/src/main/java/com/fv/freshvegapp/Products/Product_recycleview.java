@@ -71,6 +71,8 @@ public class Product_recycleview extends Fragment {
         a = preferences.getString("data", "");
         editor.apply();
 
+
+
 //for oos downlist
         queryss = mDatabase.orderByChild("oos").startAt("instock");
 
@@ -213,14 +215,4 @@ public class Product_recycleview extends Fragment {
         });
     }
 
-//    private void filter(String text) {
-//
-//        ArrayList<UploadPojo> filteredList = new ArrayList<>();
-//        for (UploadPojo item : uploads) {
-//            if (item.getProduct().toLowerCase().contains(text.toLowerCase())) {
-//                filteredList.add(item);
-//            }
-//        }
-//        adapter.filterList(filteredList);
-//    }
 }

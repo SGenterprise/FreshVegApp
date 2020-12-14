@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -35,7 +36,7 @@ public class Order_Products_Recycleview extends AppCompatActivity {
     private DatabaseReference mDatabase,reff;
     private ProgressDialog progressDialog;
     private List<CartPojo> uploads;
-    TextView orderdate,orderid,totalamaount,orderstatus,paytype,deliverycharge,taxes,houseandbuld,fulladd,ddate,appBarTV,t42,tmrp,Dname_id,Dnum_id,Dlandmark_id;
+    TextView orderdate,orderid,totalamaount,idcall,orderstatus,paytype,deliverycharge,taxes,houseandbuld,fulladd,ddate,appBarTV,t42,tmrp,Dname_id,Dnum_id,Dlandmark_id;
     TextView coupan,dliveryon,asapdelivery,coupanname;
     String Totalprice,Coupan,couponnam,order_id,Ordertime,Orderstatus,paytypes,DChagre,Taxes,Daddress,Dhandb,Dtime,Ddate,Tmrp,dname,dlandmark,dnum;
 
@@ -49,6 +50,15 @@ public class Order_Products_Recycleview extends AppCompatActivity {
         LinearLayout back = findViewById(R.id.back_update);
         appBarTV = findViewById(R.id.appbar_text_view);
         appBarTV.setText("");
+        idcall = findViewById(R.id.call);
+        idcall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phone = "+918104725416";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",phone, null));
+                startActivity(intent);
+            }
+        });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

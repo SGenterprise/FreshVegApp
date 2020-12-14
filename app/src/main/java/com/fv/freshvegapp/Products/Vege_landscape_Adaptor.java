@@ -72,7 +72,6 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     Quantity = upload.getQuantity();
     Price = upload.getPrice();
     Mrp  = upload.getMrp();
-    Count = upload.getCount();
 
         holder.Cat_name.setText(upload.getCategory());
         Glide.with(context)
@@ -128,13 +127,6 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
 
 
             }
-//            else  (OOS.equals("instock")){
-////                    holder.add.setVisibility(View.VISIBLE);
-////                    holder.greyback.setVisibility(View.GONE);
-////                    holder.textoos.setVisibility(View.GONE);
-//            }
-
-//            notifyDataSetChanged();
         }
 
         @Override
@@ -181,6 +173,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             String p = (String.valueOf(result));
             cartPojo.setSubprice(p);
             cartPojo.setPrice(Price);
+            cartPojo.setMrp(Mrp);
             cartPojo.setCount(String.valueOf(a));
             reff.child(ProductName).setValue(cartPojo);
             notifyDataSetChanged();
@@ -223,6 +216,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
                 String p = (String.valueOf(result));
                 cartPojo.setSubprice(p);
                 cartPojo.setPrice(Price);
+                cartPojo.setMrp(Mrp);
                 cartPojo.setCount(holder.textcount.getText().toString());
                 reff.child(ProductName).setValue(cartPojo);
                 notifyDataSetChanged();
@@ -253,6 +247,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             String p = (String.valueOf(result));
             cartPojo.setSubprice(p);
             cartPojo.setPrice(Price);
+            cartPojo.setMrp(Mrp);
             cartPojo.setCount(holder.textcount.getText().toString());
             reff.child(ProductName).setValue(cartPojo);
             notifyDataSetChanged();

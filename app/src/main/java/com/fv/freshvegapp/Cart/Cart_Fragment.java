@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -57,7 +58,7 @@ public class Cart_Fragment extends Fragment
     DatabaseReference reff,refff;
     String amPm,txt_email,txt_num;
     CardView lay1,lay2,lay3,addprofreedel;
-    private TextView houseno,buildname,address1,delivery_time,Select_address_text,deliverytill,delivery_charge,t42,chosedelivery,coupondiscount;
+    private TextView nametxt,numbertxt,houseno,buildname,address1,delivery_time,Select_address_text,deliverytill,delivery_charge,t42,chosedelivery,coupondiscount;
     String TAG = "Payment Error";
     private TextView total,btn_order,tmrp,btn_change,dateTextView, timeTextView,textshu,tax,add_id,coupanname,amtforfreedeli;
     CardView btn;
@@ -80,6 +81,7 @@ public class Cart_Fragment extends Fragment
     String dated="";
     String orderid="";
     SharedPreferences preferences;
+    LinearLayout freedelivery;
     long maxid= 0;
 
     @Nullable
@@ -88,6 +90,8 @@ public class Cart_Fragment extends Fragment
         View view = inflater.inflate(R.layout.cart_fragment, container, false);
         Checkout.preload(getActivity());
 
+        nametxt= view.findViewById(R.id.name);
+        numbertxt = view.findViewById(R.id.number);
         addprofreedel = view.findViewById(R.id.addprofreedel);
         lay1 = view.findViewById(R.id.lay1);
         lay2 = view.findViewById(R.id.lay2);
@@ -163,16 +167,22 @@ public class Cart_Fragment extends Fragment
                         address2.setVisibility(View.GONE);
                         delivery_time.setVisibility(View.GONE);
                         address1.setVisibility(View.GONE);
+                        nametxt.setVisibility(View.GONE);
+                        numbertxt.setVisibility(View.GONE);
                         Select_address_text.setVisibility(View.VISIBLE);
                     }else {
                         address2.setVisibility(View.VISIBLE);
                         delivery_time.setVisibility(View.VISIBLE);
                         address1.setVisibility(View.VISIBLE);
+                        nametxt.setVisibility(View.VISIBLE);
+                        numbertxt.setVisibility(View.VISIBLE);
                         Select_address_text.setVisibility(View.GONE);
                     }
                     address1.setText(ad1);
                     houseno.setText(h1);
                     buildname.setText(b1);
+                    numbertxt.setText(dnumber);
+                    nametxt.setText(name);
 
       count();
         DatabaseReference refer = FirebaseDatabase.getInstance().getReference("ADDRESS").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -186,8 +196,13 @@ public class Cart_Fragment extends Fragment
                 else {
                     address1.setText("");
                     ad1 = "";
+                    dnumber = "";
+                    name = "";
+
                     address2.setVisibility(View.GONE);
                     delivery_time.setVisibility(View.GONE);
+                    nametxt.setVisibility(View.GONE);
+                    numbertxt.setVisibility(View.GONE);
                     address1.setVisibility(View.GONE);
                     btn_change.setVisibility(View.GONE);
                     Select_address_text.setVisibility(View.VISIBLE);
@@ -298,7 +313,7 @@ public class Cart_Fragment extends Fragment
                         lay1.setVisibility(View.GONE);
                         lay2.setVisibility(View.GONE);
                         lay3.setVisibility(View.GONE);
-
+                        addprofreedel.setVisibility(View.GONE);
                 }
 
             }

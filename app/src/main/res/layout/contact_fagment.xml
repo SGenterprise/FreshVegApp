@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Contact Us"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textColor="@color/black"
         android:fontFamily="@font/helveticaneuelt"
         android:gravity="center"

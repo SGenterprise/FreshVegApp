@@ -231,21 +231,6 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
         editor.apply();
         addresstext.setText(cat);
 
-//        currentlocation.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                if (ActivityCompat.checkSelfPermission(Firstactivity.this, Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
-//                    getLocation();
-//                }
-//                else {
-//                    ActivityCompat.requestPermissions(Firstactivity.this
-//                            ,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
-//                }
-//
-//            }
-//        });
-
         editcurrentlocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -333,28 +318,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
     }
 
 
-//    @SuppressLint("MissingPermission")
-//    private void getLocation() {
-//        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Location> task) {
-//                Location location = task.getResult();
-//                if(location != null){
-//                    try {
-//                        Geocoder geocoder = new Geocoder(Firstactivity.this, Locale.getDefault());
-//                        List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
-//                        addresstext.setText(addresses.get(0).getSubLocality()+","+addresses.get(0).getLocality()+".");
-//                        reffaddr.child("Address").child("currentAddress").setValue(addresses.get(0).getSubLocality()+","+addresses.get(0).getLocality()+".");
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                }
-//            }
-//        });
-//    }
 
-//Category
     private void showhome() {
         fragment = new Main_recycleview();
         cart();
@@ -365,17 +329,6 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
         }
     }
 
-    // direct products screen
-//    private void showhome() {
-//        fragment = new Product_recycleview();
-//        cart();
-//        if (fragment != null){
-//            FragmentManager manager = getSupportFragmentManager();
-//            manager.beginTransaction().replace(R.id.f_container,fragment,fragment.getTag()).commit();
-//            appBarTV.setText("FreshVeg");
-
-//        }
-//    }
     private void cart() {
         final DatabaseReference reff = FirebaseDatabase.getInstance().getReference("Cart_Items").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         reff.addValueEventListener(new ValueEventListener() {
@@ -449,7 +402,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
 
             try {
-                File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + "logo.png");
+                File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + "sharepamplet.jpg");
                 FileOutputStream fOut = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
                 fOut.flush();
@@ -462,7 +415,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 intent.setType("bbbback/png");
                 intent.setType("text/plain");
-                String shareBody = "Download Our App now :- https://play.google.com/store/apps/details?id=com.fv.freshvegapp&hl=en";
+                String shareBody = "Download Our App now :- https://play.google.com/store/apps/details?id=com.fv.freshvegapp";
                 intent.putExtra(Intent.EXTRA_TEXT, shareBody);
 
                 startActivity(Intent.createChooser(intent, "Share bbbback via"));
@@ -517,12 +470,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
                     }
                     backPressedTime = System.currentTimeMillis();
                 } else {
-
-//                    if (key.equals("1")) {
-//                        showproject();
-//                    } else {
                         showhome();
-//                    }
                 }
             }
     }
