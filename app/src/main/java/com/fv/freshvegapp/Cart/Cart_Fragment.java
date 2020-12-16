@@ -219,12 +219,12 @@ public class Cart_Fragment extends Fragment
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.RadioTimeOne:
-                        SelectTime = "10 AM to 02 PM";
+                        SelectTime = "8:30 AM to 2:30 PM";
                         Gone();
                         break;
 
                     case R.id.RadioTimeThree:
-                        SelectTime = "05 PM to 09 PM";
+                        SelectTime = "5:30 PM to 9:30 PM";
                         Gone();
                 }
             }
@@ -236,7 +236,7 @@ public class Cart_Fragment extends Fragment
         SimpleDateFormat sdf1 = new SimpleDateFormat("MMM d");
         SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy"); //12-7-2020
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 5; i++) {
             Calendar calendar = new GregorianCalendar();
             calendar.add(Calendar.DATE, i);
             String day = sdf.format(calendar.getTime());

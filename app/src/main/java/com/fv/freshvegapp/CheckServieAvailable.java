@@ -41,6 +41,9 @@ public class CheckServieAvailable extends AppCompatActivity {
     String key;
     ImageView select;
     FusedLocationProviderClient fusedLocationProviderClient;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+    String pincode = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,13 @@ public class CheckServieAvailable extends AppCompatActivity {
     }
 
     private void contini() {
+        preferences = getSharedPreferences("Back",MODE_PRIVATE);
+        editor = preferences.edit();
+        pincode = "" ;
+        editor.putString("pincode",pincode);
+        key = null;
+        editor.putString("key",key);
+
         if (edpin.getText().toString().equals("")){
             Toast.makeText(CheckServieAvailable.this, "Enter Pincode", Toast.LENGTH_SHORT).show();
         }
@@ -82,9 +92,8 @@ public class CheckServieAvailable extends AppCompatActivity {
                         if (snapshot.exists()) {
                             UploadPojo upload = postSnapshot.getValue(UploadPojo.class);
                             if (edpin.getText().toString().toUpperCase().toUpperCase().contains(upload.getPincode())) {
-                                SharedPreferences preferences = getSharedPreferences("Back",MODE_PRIVATE);
-                                SharedPreferences.Editor editor = preferences.edit();
-                                String pincode;
+                                 preferences = getSharedPreferences("Back",MODE_PRIVATE);
+
                                 pincode = edpin.getText().toString().trim();
                                 key = "1";
                                 editor.putString("key",key);

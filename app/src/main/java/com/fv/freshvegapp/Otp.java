@@ -211,7 +211,7 @@ public class Otp extends AppCompatActivity {
                             });
 
                         } else {
-                            Toast.makeText(Otp.this,"Incorrect OTP", Toast.LENGTH_SHORT).show();
+                          //  Toast.makeText(Otp.this,"Incorrect OTP", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                     }

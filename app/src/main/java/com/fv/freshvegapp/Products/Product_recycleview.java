@@ -174,8 +174,8 @@ public class Product_recycleview extends Fragment {
                     }
                 }
                 adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
-                adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -203,8 +203,8 @@ public class Product_recycleview extends Fragment {
                     }
                 }
                 adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
-                adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
 
             @Override

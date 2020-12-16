@@ -158,7 +158,6 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             cartPojo.setPrice(Price);
             cartPojo.setCount(String.valueOf(a));
             reff.child(ProductName).setValue(cartPojo);
-            notifyDataSetChanged();
         }
     });
 
@@ -201,7 +200,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
                 cartPojo.setMrp(Mrp);
                 cartPojo.setCount(holder.textcount.getText().toString());
                 reff.child(ProductName).setValue(cartPojo);
-                notifyDataSetChanged();
+
             }
         }
 
@@ -232,7 +231,6 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             cartPojo.setMrp(Mrp);
             cartPojo.setCount(holder.textcount.getText().toString());
             reff.child(ProductName).setValue(cartPojo);
-            notifyDataSetChanged();
         }
     });
 }

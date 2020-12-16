@@ -367,7 +367,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
         } else if (id == R.id.Profile) {
             appBarTV.setText("Profile");
             fragment = new ProFileFragment();
-            cartlay.setVisibility(View.GONE);
+            cartlay.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.cart) {
             appBarTV.setText("Cart");

@@ -50,12 +50,12 @@
     </RelativeLayout>
 
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingBottom="2dp"
+        android:layout_above="@+id/checkoutlay"
         android:layout_below="@+id/search_card"
-        android:layout_above="@+id/new_lay_id"
         >
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,12 +65,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/product_recycleview1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="4dp"
             android:background="@color/white"
             />
     </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
     <RelativeLayout
         android:id="@+id/checkoutlay"
         android:layout_width="match_parent"

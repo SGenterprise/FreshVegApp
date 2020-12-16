@@ -218,7 +218,6 @@
                     android:id="@+id/chooseDelivery"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:text="Choose Delivery Date &amp; Time"
                     android:textColor="@android:color/black"
@@ -250,7 +249,7 @@
                         android:background="@android:color/white"
                         android:shadowRadius="5"
                         android:fontFamily="@font/calibri"
-                        android:text="10AM - 2PM" />
+                        android:text="8:30 AM to 2:30 PM" />
 
                     <RadioButton
                         android:id="@+id/RadioTimeThree"
@@ -262,7 +261,7 @@
                         android:shadowRadius="5"
                         android:background="@android:color/white"
                         android:fontFamily="@font/calibri"
-                        android:text="5PM - 11PM" />
+                        android:text="5:30 PM to 9:30 PM" />
 
                 </RadioGroup>
 
