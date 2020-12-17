@@ -67,7 +67,7 @@ public class Cart_Fragment extends Fragment
     double taxestext ;
     String email;
     int finaltotal = 0;
-    String ad1="",h1="",b1="",dnumber="",name="",landmark="";
+    String ad1="",h1="",b1="",dnumber="",name="",landmark="",id_add="";
     String lati ,longi,coupondis;
     String per="", upto="",min="";
     String userid = FirebaseAuth.getInstance().getUid();
@@ -158,6 +158,7 @@ public class Cart_Fragment extends Fragment
                     per = preferences.getString("per", "");
                     upto = preferences.getString("upto", "");
                     min = preferences.getString("min", "");
+                    id_add = preferences.getString("id_add", "");
                     couponnamee = preferences.getString("couponname", "");
 
                     SharedPreferences.Editor editor = preferences.edit();
@@ -460,6 +461,9 @@ public class Cart_Fragment extends Fragment
         Select_address_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+              address_id();
+
                 Intent i = new Intent(getContext(), Address_Select_Activity.class);
                 startActivity(i);
                 getActivity().finish();
@@ -469,6 +473,7 @@ public class Cart_Fragment extends Fragment
         btn_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                address_id();
                 Intent i = new Intent(getContext(), Address_Select_Activity.class);
                 startActivity(i);
                 getActivity().finish();
@@ -498,6 +503,13 @@ public class Cart_Fragment extends Fragment
         });
 
         return view;
+    }
+
+    private void address_id() {
+        preferences = Objects.requireNonNull(getActivity()).getSharedPreferences("MYPREFS",MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("id_add",id_add);
+        editor.apply();
     }
 
 

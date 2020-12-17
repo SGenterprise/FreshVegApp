@@ -62,6 +62,7 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
     GoogleMap gMap;
     SearchView searchView;
     String n1,ad1,num1,l1,h1,b1,back3,lati,longi,id,pincode,check;
+    String subloc,loc,adminarea,postal,national;
     private long backPressedTime;
     private Toast backToast;
 
@@ -177,7 +178,14 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
                     }
                     assert addressList != null;
                     Address addresses = addressList.get(0);
-                    address = addressList.get(0).getAddressLine(0);
+
+                    subloc = addressList.get(0).getSubLocality();
+                    loc = addressList.get(0).getLocality();
+                    adminarea = addressList.get(0).getAdminArea();
+                    postal = addressList.get(0).getPostalCode();
+                    national = addressList.get(0).getCountryName();
+
+                    address = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
                     address1.setText(address);
                     LatLng latLng = new LatLng(addresses.getLatitude(),addresses.getLongitude());
                     gMap.addMarker(new MarkerOptions().position(latLng));
@@ -244,7 +252,14 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
                     try {
                         Geocoder geocoder = new Geocoder(Address_Update.this, Locale.getDefault());
                         List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
-                        String ad = addresses.get(0).getAddressLine(0);
+
+                        subloc = addresses.get(0).getSubLocality();
+                        loc = addresses.get(0).getLocality();
+                        adminarea = addresses.get(0).getAdminArea();
+                        postal = addresses.get(0).getPostalCode();
+                        national = addresses.get(0).getCountryName();
+
+                        String ad  = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
 
                         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
                         longi = String.valueOf(location.getLongitude());
@@ -408,7 +423,14 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
                 }
 
                 assert addressList != null;
-                address = addressList.get(0).getAddressLine(0);
+                
+                subloc = addressList.get(0).getSubLocality();
+                loc = addressList.get(0).getLocality();
+                adminarea = addressList.get(0).getAdminArea();
+                postal = addressList.get(0).getPostalCode();
+                national = addressList.get(0).getCountryName();
+                address = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
+
                 lati = String.valueOf(latitude);
                 longi = String.valueOf(longitude);
                 pincode = String.valueOf(addressList.get(0).getPostalCode());

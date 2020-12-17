@@ -54,6 +54,7 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
     EditText name,house,buldg,landm,num,pincodeed;
     SearchView searchView;
     String address,longi,lati,pincode;
+    String subloc,loc,adminarea,postal,national;
     FusedLocationProviderClient fusedLocationProviderClient;
     CardView select;
     DatabaseReference reference,refere;
@@ -149,7 +150,15 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
                     }
                     assert addressList != null;
                     Address addresses = addressList.get(0);
-                    address = addressList.get(0).getAddressLine(0);
+
+                    subloc = addressList.get(0).getSubLocality();
+                    loc = addressList.get(0).getLocality();
+                    adminarea = addressList.get(0).getAdminArea();
+                    postal = addressList.get(0).getPostalCode();
+                    national = addressList.get(0).getCountryName();
+
+                    address = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
+
                     address1.setText(address);
                     LatLng latLng = new LatLng(addresses.getLatitude(),addresses.getLongitude());
                     gMap.addMarker(new MarkerOptions().position(latLng));
@@ -228,7 +237,15 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
                     try {
                         Geocoder geocoder = new Geocoder(Address_Upload.this, Locale.getDefault());
                         List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
-                        String ad = addresses.get(0).getAddressLine(0);
+
+                        subloc = addresses.get(0).getSubLocality();
+                        loc = addresses.get(0).getLocality();
+                        adminarea = addresses.get(0).getAdminArea();
+                        postal = addresses.get(0).getPostalCode();
+                        national = addresses.get(0).getCountryName();
+
+                        String ad  = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
+
                         longi = String.valueOf(location.getLongitude());
                         lati = String.valueOf(location.getLatitude());
                         pincode = String.valueOf(addresses.get(0).getPostalCode());
@@ -241,9 +258,12 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
 
                         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
 
-                        gMap.clear();
-                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
-                        gMap.addMarker(new MarkerOptions().position(latLng));
+                        if (!(gMap == null)){
+                            gMap.clear();
+                            gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
+                            gMap.addMarker(new MarkerOptions().position(latLng));
+                        }
+
                         address1.setText(ad);
 
                     } catch (IOException e) {
@@ -358,7 +378,15 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
                 }
 
                 if (!(addressList.get(0).getAddressLine(0) == null)){
-                    address = addressList.get(0).getAddressLine(0);
+
+                    subloc = addressList.get(0).getSubLocality();
+                    loc = addressList.get(0).getLocality();
+                    adminarea = addressList.get(0).getAdminArea();
+                    postal = addressList.get(0).getPostalCode();
+                    national = addressList.get(0).getCountryName();
+
+                    address = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
+
                     address1.setText(address);
                 }else {
                     address1.setText("");

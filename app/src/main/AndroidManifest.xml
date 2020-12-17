@@ -11,56 +11,70 @@
 
     <application
         android:allowBackup="true"
-        android:largeHeap="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher_background"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_background"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Cart.PaytmentOptions"
+        <activity android:name=".Cart.Thankyou"></activity>
+        <activity
+            android:name=".Cart.PaytmentOptions"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Orders.Order_Products_Recycleview"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Orders.Order_Products_Recycleview"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Address.Address_Update"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Address.Address_Update"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Address.Address_Upload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Address.Address_Upload"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Address.Address_Select_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Address.Address_Select_Activity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Upload_Pincodes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Upload_Pincodes"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Firstactivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Firstactivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CheckServieAvailable"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CheckServieAvailable"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Slider.Slide_Detail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Slider.Slide_Detail"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Coupons.Coupon_Select_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Coupons.Coupon_Select_Activity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Profile_fragment.Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Profile_fragment.Profile"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Sign_up"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Sign_up"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Otp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Otp"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Splash_Screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Splash_Screen"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

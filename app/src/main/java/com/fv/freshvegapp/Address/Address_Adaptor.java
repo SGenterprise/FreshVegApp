@@ -57,7 +57,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
         @Override
         public void onClick(View view) {
 
-            SharedPreferences preferences = context.getSharedPreferences("MYPREFS",MODE_PRIVATE);
+            SharedPreferences preferences = context.getSharedPreferences("Updateaddress",MODE_PRIVATE);
             String name = holder.name.getText().toString().trim();
             String add1 = holder.add1.getText().toString().trim();
             String num = holder.num.getText().toString().trim();

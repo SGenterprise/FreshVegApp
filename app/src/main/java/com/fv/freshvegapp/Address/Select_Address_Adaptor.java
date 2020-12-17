@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,9 +55,21 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     holder.hou.setText(upload.getHouseno());
     holder.bul.setText(upload.getBuilding());
 
-    holder.select_address.setOnClickListener(new View.OnClickListener() {
+    SharedPreferences preferences = context.getSharedPreferences("MYPREFS",MODE_PRIVATE);
+    final String id = preferences.getString( "id_add","");
+    SharedPreferences.Editor editor = preferences.edit();
+    editor.apply();
+
+    if (upload.getId() != null){
+        if (upload.getId().equals(id)){
+            holder.selectRadio.setChecked(true);
+        }
+    }
+
+    holder.selectRadio.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            holder.selectRadio.setChecked(true);
             SharedPreferences preferenc = context.getSharedPreferences("MYPREFS",MODE_PRIVATE);
             String name = holder.name.getText().toString().trim();
             String add1 = holder.add1.getText().toString().trim();
@@ -66,6 +79,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             String bu = holder.bul.getText().toString().trim();
             String lati = upload.getLatitude();
             String longi = upload.getLongitude();
+            String id_ad = upload.getId();
 
             SharedPreferences.Editor editor = preferenc.edit();
             editor.putString("name",name);
@@ -76,6 +90,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             editor.putString("bu",bu);
             editor.putString("lati",lati);
             editor.putString("longi",longi);
+            editor.putString("id_add",id_ad);
 
             editor.apply();
             SharedPreferences preferences = context.getSharedPreferences("cart_select", Context.MODE_PRIVATE);
@@ -171,7 +186,8 @@ public int getItemCount() {
 
 class ViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView name,hou,bul,add1,num,landmark,edit,remove,select_address;
+    public TextView name,hou,bul,add1,num,landmark,edit,remove;
+    public RadioButton selectRadio;
 
     public ViewHolder(View itemView) {
         super(itemView);
@@ -184,7 +200,7 @@ class ViewHolder extends RecyclerView.ViewHolder {
         bul = (TextView) itemView.findViewById(R.id.build);
         edit = (TextView) itemView.findViewById(R.id.edit_add);
         remove = (TextView) itemView.findViewById(R.id.remove_add);
-        select_address = itemView.findViewById(R.id.selectad);
+        selectRadio = itemView.findViewById(R.id.selectRadio);
     }
 }
 }
