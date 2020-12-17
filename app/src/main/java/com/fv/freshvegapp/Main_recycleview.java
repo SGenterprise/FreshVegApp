@@ -63,15 +63,20 @@ public class Main_recycleview extends Fragment {
 
     private SliderView sliderView;
     int setcount;
-    CardView vege,dealcard,fruitcard,dryfruitcard;
+    CardView vege,dealcard,fruitcard,dryfruitcard,vegeviewall,fruitviewall;
     String a = "Fresh Vegetables",b = "Deals",c ="Fruits",d = "Dry Fruits";
     Query dealquery,vegquery,fruitquery,dryfruquery;
+
+    public Main_recycleview() {
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_recycleview, container, false);
 
+        vegeviewall  = (CardView) view.findViewById(R.id.freshvege_card);
+        fruitviewall  = (CardView) view.findViewById(R.id.freshfruit_card);
         recyclerView = (RecyclerView) view.findViewById(R.id.category_recycleview1);
         deal_recyclerView = (RecyclerView) view.findViewById(R.id.deal_recycleview1);
         fruit_recyclerView = (RecyclerView) view.findViewById(R.id.fruit_recycleview);
@@ -146,6 +151,7 @@ public class Main_recycleview extends Fragment {
                 recyclerView.setAdapter(vege_adaptor);
                 if (vege_adaptor.getItemCount() == 0){
                     recyclerView.setVisibility(View.GONE);
+                    vegeviewall.setVisibility(View.GONE);
                     vege.setVisibility(View.GONE);
                     vegtit.setVisibility(View.GONE);
                 }
@@ -191,11 +197,6 @@ public class Main_recycleview extends Fragment {
         fruitquery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!snapshot.exists()){
-                    fruit_recyclerView.setVisibility(View.GONE);
-                    fruitcard.setVisibility(View.GONE);
-                    fruittit.setVisibility(View.GONE);
-                }
                 //dismissing the progress dialog
                 fruituploads.clear();
                 progressDialog.dismiss();
@@ -212,6 +213,7 @@ public class Main_recycleview extends Fragment {
                 fruit_recyclerView.setAdapter(fruit_adaptor);
                 if (fruit_adaptor.getItemCount() == 0){
                     fruit_recyclerView.setVisibility(View.GONE);
+                    fruitviewall.setVisibility(View.GONE);
                     fruitcard.setVisibility(View.GONE);
                     fruittit.setVisibility(View.GONE);
                 }
@@ -240,7 +242,6 @@ public class Main_recycleview extends Fragment {
                     if (dryupload.getCategory().toUpperCase().contains(d.toUpperCase()))
                     {
                         dryfruituploads.add(dryupload);
-
                     }
 
                 }
@@ -262,19 +263,22 @@ public class Main_recycleview extends Fragment {
         });
      preferences =  getActivity().getSharedPreferences("Main",MODE_PRIVATE);
 
+        vegeviewall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewvege();
+            }
+        });
       vege.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
 
-              SharedPreferences.Editor editor = preferences.edit();
-              editor.putString("data",a);
-              editor.apply();
-              Fragment fragment = new Product_recycleview();
-              FragmentManager manager = getActivity().getSupportFragmentManager();
-              manager.beginTransaction().replace(R.id.f_container,fragment,fragment.getTag()).commit();
+               viewvege();
 
           }
       });
+
+
         dealcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -288,17 +292,17 @@ public class Main_recycleview extends Fragment {
 
             }
         });
-
+        fruitviewall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fruitview();
+            }
+        });
         fruitcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("data",c);
-                editor.apply();
-                Fragment fragment = new Product_recycleview();
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.f_container,fragment,fragment.getTag()).commit();
+                fruitview();
 
             }
         });
@@ -313,8 +317,29 @@ public class Main_recycleview extends Fragment {
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.f_container,fragment,fragment.getTag()).commit();
 
+
             }
         });
         return view;
+
     }
+
+    private void fruitview() {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("data",c);
+        editor.apply();
+        Fragment fragment = new Product_recycleview();
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.f_container,fragment,fragment.getTag()).commit();
+    }
+
+    private void viewvege() {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("data",a);
+        editor.apply();
+        Fragment fragment = new Product_recycleview();
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.f_container,fragment,fragment.getTag()).commit();
+    }
+
 }

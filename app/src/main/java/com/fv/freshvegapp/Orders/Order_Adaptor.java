@@ -250,6 +250,14 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             }
         }
     });
+
+    holder.Ordernotcancel.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(context, "Order is processed we Cant cancel it. Contact us if you have still have any query ", Toast.LENGTH_LONG).show();
+        }
+    });
+
         }
 
 @Override

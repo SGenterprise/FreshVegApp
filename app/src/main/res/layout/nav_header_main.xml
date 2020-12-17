@@ -50,7 +50,7 @@
             android:lines="1"
             android:fontFamily="@font/helveticaneuelt"
             android:maxLength="150"
-            android:text="Shreedhar"/>
+            android:text=""/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

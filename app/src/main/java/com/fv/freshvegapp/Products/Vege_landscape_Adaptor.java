@@ -115,6 +115,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
                             ds.getRef().child("productName").removeValue();
                             ds.getRef().child("product_img").removeValue();
                             ds.getRef().child("quantity").removeValue();
+                            ds.getRef().child("mrp").removeValue();
                             ds.getRef().child("subprice").removeValue();
                         }
                     }
