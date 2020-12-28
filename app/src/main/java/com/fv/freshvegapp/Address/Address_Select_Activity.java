@@ -42,6 +42,16 @@ public class Address_Select_Activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_back);
         setSupportActionBar(toolbar);
         LinearLayout back = findViewById(R.id.back_update);
+
+        SharedPreferences delpre = getSharedPreferences("checkk",MODE_PRIVATE);
+        SharedPreferences.Editor editorlp = delpre.edit();
+        editorlp.putString("key","");
+        editorlp.apply();
+
+        SharedPreferences delpree = getSharedPreferences("checkk",MODE_PRIVATE);
+        SharedPreferences.Editor editorlpp = delpree.edit();
+        editorlpp.putString("keyy","");
+        editorlpp.apply();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +115,6 @@ public class Address_Select_Activity extends AppCompatActivity {
                 Intent intent = new Intent(Address_Select_Activity.this, Address_Upload.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish();
             }
         });
     }

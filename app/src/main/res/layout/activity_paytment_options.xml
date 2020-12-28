@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Payment Options"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="18dp"
         android:background="@drawable/rec_button_black"
         android:layout_margin="5dp"
         android:padding="5dp"
@@ -46,7 +46,7 @@
             android:text="Recommended Payment Options"
             android:gravity="center"
             android:layout_marginStart="10dp"
-            android:textSize="15sp"
+            android:textSize="15dp"
             android:textColor="@color/black"
             />
         <LinearLayout
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Google Pay"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:fontFamily="@font/verdana"
             android:textColor="@color/black"
             />
@@ -85,7 +85,7 @@
         android:button="@drawable/custom_radio_buttons"
         android:fontFamily="@font/helveticaneuelt"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="18dp"
         android:theme="@style/RadioButtonStyle" />
 </LinearLayout>
 
@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PhonePe"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 android:fontFamily="@font/verdana"
                 android:textColor="@color/black"
                 />
@@ -126,7 +126,7 @@
                     android:button="@drawable/custom_radio_buttons"
                     android:fontFamily="@font/helveticaneuelt"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:theme="@style/RadioButtonStyle" />
             </LinearLayout>
 
@@ -151,7 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Paytm UPI"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 android:fontFamily="@font/verdana"
                 android:textColor="@color/black"
                 />
@@ -167,7 +167,7 @@
                     android:button="@drawable/custom_radio_buttons"
                     android:fontFamily="@font/helveticaneuelt"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:theme="@style/RadioButtonStyle" />
             </LinearLayout>
 
@@ -193,7 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bhim UPI"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 android:fontFamily="@font/verdana"
                 android:textColor="@color/black"
                 />
@@ -209,7 +209,7 @@
                     android:button="@drawable/custom_radio_buttons"
                     android:fontFamily="@font/helveticaneuelt"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:theme="@style/RadioButtonStyle" />
             </LinearLayout>
 
@@ -220,7 +220,7 @@
             android:text="Other Payment Options"
             android:gravity="center"
             android:layout_marginStart="10dp"
-            android:textSize="15sp"
+            android:textSize="15dp"
             android:textColor="@color/black"
             />
         <LinearLayout
@@ -249,7 +249,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rozarpay"
-        android:textSize="18sp"
+        android:textSize="18dp"
         android:fontFamily="@font/verdana"
         android:textColor="@color/black"
         />
@@ -257,7 +257,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="note: Rozarpay will charge 2% on total amount"
-        android:textSize="10sp"
+        android:textSize="10dp"
         android:fontFamily="@font/verdana"
         android:textColor="@color/black"
         />
@@ -277,7 +277,7 @@
                     android:button="@drawable/custom_radio_buttons"
                     android:fontFamily="@font/helveticaneuelt"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:theme="@style/RadioButtonStyle" />
             </LinearLayout>
 
@@ -303,7 +303,7 @@
                     android:text="Cash On Delivery"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:fontFamily="@font/verdana"
                     android:textColor="@color/black"
                     />
@@ -324,7 +324,7 @@
                     android:button="@drawable/custom_radio_buttons"
                     android:fontFamily="@font/helveticaneuelt"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:theme="@style/RadioButtonStyle" />
             </LinearLayout>
 
@@ -349,7 +349,7 @@
             android:layout_height="wrap_content"
             android:text="Pay"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:fontFamily="@font/helveticaneuelt"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"

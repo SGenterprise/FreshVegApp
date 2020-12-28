@@ -2,10 +2,41 @@ package com.fv.freshvegapp;
 
 public class UploadPojo {
     String category,product,mrp,rs,off,price,quantity,weight,product_img,category_img,Count,pincode,stock,code,subtotal,longitude,latitude,OOS;
-
+    String Productstags,product_img2,product_img3,product_img4;
     public UploadPojo() {
     }
 
+    public String getProductstags() {
+        return Productstags;
+    }
+
+    public void setProductstags(String productstags) {
+        Productstags = productstags;
+    }
+
+    public String getProduct_img2() {
+        return product_img2;
+    }
+
+    public void setProduct_img2(String product_img2) {
+        this.product_img2 = product_img2;
+    }
+
+    public String getProduct_img3() {
+        return product_img3;
+    }
+
+    public void setProduct_img3(String product_img3) {
+        this.product_img3 = product_img3;
+    }
+
+    public String getProduct_img4() {
+        return product_img4;
+    }
+
+    public void setProduct_img4(String product_img4) {
+        this.product_img4 = product_img4;
+    }
 
     public String getMrp() {
         return mrp;

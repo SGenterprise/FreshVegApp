@@ -48,6 +48,7 @@
     <color name="dd1">#53BA27</color>
     <color name="dd2">#39672F</color>
     <color name="green">#7DCC22</color>
+    <color name="trans_green">#5E7DCC22</color>
 
     <color name="gradient_start_color">#4c84ff</color>
     <color name="gradient_end_color">#18a3fe</color>

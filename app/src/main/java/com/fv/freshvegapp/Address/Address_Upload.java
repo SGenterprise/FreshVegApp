@@ -89,7 +89,6 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
             }
         });
 
-
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -284,8 +283,8 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
 
     private void pinfilter() {
 
-        if (pincodeed.getText().toString().equals("")){
-            Toast.makeText(Address_Upload.this, "Enter Pincode", Toast.LENGTH_SHORT).show();
+        if (pincodeed.getText().toString().equals("") || address1.getText().toString().equals("") ) {
+            Toast.makeText(Address_Upload.this, "Enter All details.", Toast.LENGTH_SHORT).show();
         }
         else {
             refere = FirebaseDatabase.getInstance().getReference("pincodes");
@@ -404,5 +403,10 @@ public class Address_Upload extends AppCompatActivity implements OnMapReadyCallb
 
             }
         });
+
+
+    }
+    public void onBackPressed() {
+        backk();
     }
 }

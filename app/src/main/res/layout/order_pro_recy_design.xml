@@ -33,7 +33,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="85dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="10dp"
             >
@@ -44,7 +44,7 @@
              android:layout_marginTop="4dp"
             android:textColor="@color/black"
             android:fontFamily="@font/helveticaneuelt"
-            android:textSize="15sp"
+            android:textSize="15dp"
             />
             <TextView
                 android:id="@+id/pro_name"
@@ -53,27 +53,27 @@
                 android:layout_marginTop="2dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 />
 
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/quantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/helveticaneuelt"
+                android:textSize="13dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 >
-                <TextView
-                    android:id="@+id/quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="13sp"
-                    />
+
                 <LinearLayout
                     android:layout_width="100dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="bottom"
                     >
@@ -84,7 +84,7 @@
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="Rs."
                         android:textColor="@color/black"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/price"
@@ -94,7 +94,7 @@
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="40"
                         android:textColor="@color/black"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
                         android:fontFamily="@font/helveticaneuelt"
                         android:text=" X "
                         android:textColor="@color/black"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -114,56 +114,50 @@
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="100dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginEnd="10dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="10dp">
-
-
-
+                   >
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="0dp"
                             android:orientation="horizontal"
                             android:layout_marginTop="2dp"
-                            android:layout_marginRight="10dp"
+
                             android:layout_gravity="end"
                             android:gravity="bottom"
                             android:layout_weight="1"
                             >
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="15dp"
+                                android:layout_height="wrap_content"
                                 android:textColor="@color/black"
                                 android:text="Rs."
                                 android:fontFamily="@font/helveticaneuelt"
-                                android:textSize="15sp"
+                                android:textSize="15dp"
                                 android:textStyle="bold"
                                 />
                         <TextView
                             android:id="@+id/subtotal"
                             android:layout_width="match_parent"
-                            android:layout_height="15dp"
+                            android:layout_height="wrap_content"
                             android:textColor="@color/black"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="15sp"
+                            android:textSize="15dp"
                             android:textStyle="bold"
                             />
 
                         </LinearLayout>
 
                 </LinearLayout>
-            </RelativeLayout>
+            </LinearLayout>
 
         </LinearLayout>
 

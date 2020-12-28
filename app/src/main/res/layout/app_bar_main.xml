@@ -33,7 +33,7 @@
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/helveticaneuelt"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <ImageButton

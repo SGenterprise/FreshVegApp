@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fv.freshvegapp.R;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -22,11 +24,14 @@ import static android.content.Context.MODE_PRIVATE;
 public class CalenderApater extends RecyclerView.Adapter<CalenderApater.MyViewHolder> {
     List<CalenderModel> CalData;
     GetFullDateListener getFullDateListener;
-    private Context context;
 
-    public CalenderApater(Context context,List<CalenderModel> calData) {
+    private Context context;
+    private RecycleViewClick mListener;
+
+    public CalenderApater(List<CalenderModel> calData, Context context, RecycleViewClick mListener) {
         CalData = calData;
         this.context = context;
+        this.mListener = mListener;
     }
 
     public void getFullDateListener(GetFullDateListener getFullDateListener) {
@@ -35,6 +40,7 @@ public class CalenderApater extends RecyclerView.Adapter<CalenderApater.MyViewHo
 
 
     public String fulldate = "";
+    public String time = "";
     int rowIndex;
 
     @NonNull
@@ -56,19 +62,24 @@ public class CalenderApater extends RecyclerView.Adapter<CalenderApater.MyViewHo
         MyViewHolder myViewHolder = (MyViewHolder) holder;
         myViewHolder.bindData(position, CalData);
 
-
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 rowIndex = position;
 
-                SharedPreferences preferences = context.getSharedPreferences("date",MODE_PRIVATE);
+                Calendar c = Calendar.getInstance();
+                int day = c.get(Calendar.DAY_OF_MONTH);
+                int month = c.get(Calendar.MONTH);
+                int year = c.get(Calendar.YEAR);
+                //  String date = day + "/" + (month+1) + "/" + year;
+                //    Toast.makeText(context, calenderModel.getFulldate(), Toast.LENGTH_SHORT).show();
+                SharedPreferences preferences = context.getSharedPreferences("date", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 String a = calenderModel.getFulldate();
-                editor.putString("fulldate",a);
+                String b = calenderModel.getTime();
+                editor.putString("fulldate", a);
+                editor.putString("time",  b);
                 editor.apply();
-
                 notifyDataSetChanged();
             }
         });
@@ -102,35 +113,37 @@ public class CalenderApater extends RecyclerView.Adapter<CalenderApater.MyViewHo
             day.setText(calender.get(position).getCalenderDay());
 
 
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     rowIndex = position;
-                    Log.i("fullDate", fulldate + "activit");
+                    Log.i("fullDate" , fulldate + "activit");
+                    mListener.onClick(view, position);
                     notifyDataSetChanged();
                 }
             });
 
             if (rowIndex == position) {
                 fulldate = CalData.get(position).getFulldate();
+                time = CalData.get(position).getTime();
                 getFullDateListener.getFullDateListener(fulldate);
+                getFullDateListener.getFullDateListener(time);
                 date.setTextColor(itemView.getContext().getResources().getColor(R.color.white));
                 day.setTextColor(itemView.getContext().getResources().getColor(R.color.white));
                 DateLinearLayout.setBackground(itemView.getContext().getResources().getDrawable(R.color.red));
 
-                SharedPreferences preferences = context.getSharedPreferences("date",MODE_PRIVATE);
+                SharedPreferences preferences = context.getSharedPreferences("date", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
- //               String a = day.getText().toString()+" "+date.getText().toString();
-                String a = fulldate;
-                editor.putString("fulldate",a);
+                //               String a = day.getText().toString()+" "+date.getText().toString();
+                String a = fulldate; // 13-01-2021
+                Toast.makeText(context,a, Toast.LENGTH_SHORT).show();
+                editor.putString("fulldate", a);
                 editor.apply();
 
             } else {
                 date.setTextColor(itemView.getContext().getResources().getColor(R.color.black));
                 day.setTextColor(itemView.getContext().getResources().getColor(R.color.black));
                 DateLinearLayout.setBackground(itemView.getContext().getResources().getDrawable(R.drawable.bstroke_rectengle));
-
             }
         }
 

@@ -152,7 +152,7 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
                 if (event.getAction() == KeyEvent.ACTION_DOWN
                         && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)
                 {
-              house.findFocus();
+                    house.findFocus();
                     return false;
                 }
 
@@ -165,36 +165,36 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
             public boolean onQueryTextSubmit(String query) {
                 if (searchView != null){
                     gMap.clear();
-                String location;
-                 location = searchView.getQuery().toString();
-                List<Address>addressList = null;
+                    String location;
+                    location = searchView.getQuery().toString();
+                    List<Address>addressList = null;
 
-                if (!location.equals("")||location != null) {
-                    Geocoder geocoder = new Geocoder(Address_Update.this);
-                    try {
-                        addressList = geocoder.getFromLocationName(location,1);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    if (!location.equals("")||location != null) {
+                        Geocoder geocoder = new Geocoder(Address_Update.this);
+                        try {
+                            addressList = geocoder.getFromLocationName(location,1);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        assert addressList != null;
+                        Address addresses = addressList.get(0);
+
+                        subloc = addressList.get(0).getSubLocality();
+                        loc = addressList.get(0).getLocality();
+                        adminarea = addressList.get(0).getAdminArea();
+                        postal = addressList.get(0).getPostalCode();
+                        national = addressList.get(0).getCountryName();
+
+                        address = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
+                        address1.setText(address);
+                        LatLng latLng = new LatLng(addresses.getLatitude(),addresses.getLongitude());
+                        gMap.addMarker(new MarkerOptions().position(latLng));
+                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
+                        longi = String.valueOf(addresses.getLongitude());
+                        lati = String.valueOf(addresses.getLatitude());
+                        pincode = String.valueOf(addresses.getPostalCode());
+                        pincodeed.setText(pincode);
                     }
-                    assert addressList != null;
-                    Address addresses = addressList.get(0);
-
-                    subloc = addressList.get(0).getSubLocality();
-                    loc = addressList.get(0).getLocality();
-                    adminarea = addressList.get(0).getAdminArea();
-                    postal = addressList.get(0).getPostalCode();
-                    national = addressList.get(0).getCountryName();
-
-                    address = subloc+", "+loc+", "+adminarea+"-"+postal+", "+national;
-                    address1.setText(address);
-                    LatLng latLng = new LatLng(addresses.getLatitude(),addresses.getLongitude());
-                    gMap.addMarker(new MarkerOptions().position(latLng));
-                    gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
-                    longi = String.valueOf(addresses.getLongitude());
-                    lati = String.valueOf(addresses.getLatitude());
-                    pincode = String.valueOf(addresses.getPostalCode());
-                    pincodeed.setText(pincode);
-                 }
                 }
                 else {
                     Toast.makeText(Address_Update.this, "Enter Something To Search", Toast.LENGTH_SHORT).show();
@@ -284,10 +284,7 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 pinfilter();
-
-
             }
         });
     }
@@ -304,21 +301,21 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
                     for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                         if (snapshot.exists()) {
                             UploadPojo upload = postSnapshot.getValue(UploadPojo.class);
+
                             if (pincodeed.getText().toString().toUpperCase().toUpperCase().contains(upload.getPincode())) {
 
-                                SharedPreferences preferences = getSharedPreferences("check",MODE_PRIVATE);
+                                SharedPreferences preferences = getSharedPreferences("checkk",MODE_PRIVATE);
                                 SharedPreferences.Editor editor = preferences.edit();
                                 String pincode;
                                 pincode = pincodeed.getText().toString().trim();
-                                check = "1";
+                                check = "11";
                                 editor.putString("key",check);
                                 editor.putString("pincode",pincode);
                                 editor.apply();
 
-                                if (
-                                        name.getText().toString().equals("")
-                                                || landm.getText().toString().equals("") || house.getText().toString().equals("")
-                                                || buldg.getText().toString().equals("") || num.getText().toString().equals("")){
+                                if (name.getText().toString().equals("")
+                                        || landm.getText().toString().equals("") || house.getText().toString().equals("")
+                                        || buldg.getText().toString().equals("") || num.getText().toString().equals("")){
 
                                     Toast.makeText(Address_Update.this, "Enter all details", Toast.LENGTH_SHORT).show();
                                 }
@@ -327,7 +324,8 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
                                 }
 
 
-                            }else if (check == null){
+                            }
+                            else if (check == null){
                                 Toast.makeText(Address_Update.this, "Sorry this pincode is not our service area", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -423,7 +421,7 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
                 }
 
                 assert addressList != null;
-                
+
                 subloc = addressList.get(0).getSubLocality();
                 loc = addressList.get(0).getLocality();
                 adminarea = addressList.get(0).getAdminArea();
@@ -443,6 +441,6 @@ public class Address_Update extends AppCompatActivity implements OnMapReadyCallb
 
 
     public void onBackPressed() {
-
+        backpress();
     }
 }

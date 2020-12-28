@@ -131,7 +131,7 @@ public class Main_recycleview extends Fragment {
         sliderView = view.findViewById(R.id.imageSlider);
         //adding an event listener to fetch values
 
-        vegquery = ref.orderByChild("oos").startAt("instock").limitToFirst(5);
+        vegquery = ref.orderByChild("oos").startAt("instock").limitToFirst(8);
         vegquery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -226,7 +226,7 @@ public class Main_recycleview extends Fragment {
 
         });
 
-        dryfruquery = ref.orderByChild("oos").startAt("instock").limitToFirst(5);
+        dryfruquery = ref.orderByChild("oos").startAt("instock");
         dryfruquery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

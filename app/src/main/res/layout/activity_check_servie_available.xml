@@ -52,14 +52,15 @@
        android:layout_below="@+id/t2"
        android:layout_marginTop="13dp"
        >
+
        <ImageView
            android:id="@+id/select"
            android:layout_width="35dp"
            android:layout_height="35dp"
+           android:layout_alignParentLeft="true"
            android:layout_marginLeft="20dp"
            android:padding="8dp"
-           android:src="@drawable/select"
-           android:layout_alignParentLeft="true" />
+           android:src="@drawable/select" />
    </RelativeLayout>
 
 <RelativeLayout
@@ -78,6 +79,7 @@
         android:background="@color/white"
         android:fontFamily="@font/calibri"
         android:maxLength="6"
+        android:textSize="16dp"
         android:text=""
         />
 
@@ -99,6 +101,7 @@
         android:text="Continue"
         android:textColor="@color/white"
         android:background="@color/red"
+        android:textSize="16dp"
         />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
