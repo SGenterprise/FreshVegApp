@@ -4,8 +4,21 @@ public class CalenderModel {
     String CalenderDay;
     String CalenderDate;
     String Fulldate;
+    String time;
 
-    public CalenderModel(String calenderDay, String calenderDate, String fulldate) {
+    public CalenderModel(String day, String date, String fullDate, String time) {
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public CalenderModel(String calenderDay, String calenderDate, String fulldate, int mHour) {
         CalenderDay = calenderDay;
         CalenderDate = calenderDate;
         Fulldate = fulldate;

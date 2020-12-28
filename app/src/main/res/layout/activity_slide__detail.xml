@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:fontFamily="@font/helveticaneuelt"
             android:textColor="@color/black" />
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text=""
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:fontFamily="@font/helveticaneuelt"
             android:textColor="@color/black" />
 

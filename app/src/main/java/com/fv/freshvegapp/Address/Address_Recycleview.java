@@ -92,6 +92,8 @@ public class Address_Recycleview extends Fragment {
                 getActivity().finish();
             }
         });
+
+
         return view;
     }
 }

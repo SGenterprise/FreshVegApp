@@ -34,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.razorpay.Checkout;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -48,19 +49,19 @@ import static android.content.Context.MODE_PRIVATE;
 public class Cart_Fragment extends Fragment
 //        implements PaymentResultListener
 {
-
     private RecyclerView recyclerView;
     private Cart_Adaptor adapter;
     private DatabaseReference mDatabase;
     private ProgressDialog progressDialog;
     private List<CartPojo> uploads;
     private RelativeLayout lo,address2;
+    String cd ,ct;
     DatabaseReference reff,refff;
-    String amPm,txt_email,txt_num;
+    String amPm,txt_email,txt_num,fullDate;
     CardView lay1,lay2,lay3,addprofreedel;
     private TextView nametxt,numbertxt,houseno,buildname,address1,delivery_time,Select_address_text,deliverytill,delivery_charge,t42,chosedelivery,coupondiscount;
     String TAG = "Payment Error";
-    private TextView total,btn_order,tmrp,btn_change,dateTextView, timeTextView,textshu,tax,add_id,coupanname,amtforfreedeli;
+    private TextView total,btn_order,tmrp,btn_change,dateTextView, timeTextView,textshu,tax,add_id,coupanname,amtforfreedeli,teed;
     CardView btn;
     RelativeLayout orderlay;
     int totaltext = 0, percent = 0,uptodis = 0,mini = 0;
@@ -77,12 +78,14 @@ public class Cart_Fragment extends Fragment
     RadioGroup Radiogroup;
     RadioButton radioButtonOne ,radioButtonThree;
     String SelectTime = "";
-    String ap_selected_date, HeaderPincode,couponnamee;
+    String ap_selected_date,current_time, HeaderPincode,couponnamee;
     String dated="";
     String orderid="";
     SharedPreferences preferences;
     LinearLayout freedelivery;
     long maxid= 0;
+    int mHour,da,mo,ye;
+
 
     @Nullable
     @Override
@@ -121,6 +124,7 @@ public class Cart_Fragment extends Fragment
         t42 = view.findViewById(R.id.t42);
         chosedelivery = view.findViewById(R.id.chooseDelivery);
 
+        teed  = view.findViewById(R.id.teed);
         Radiogroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         radioButtonOne = (RadioButton) view.findViewById(R.id.RadioTimeOne);
         radioButtonThree = (RadioButton) view.findViewById(R.id.RadioTimeThree);
@@ -215,6 +219,82 @@ public class Cart_Fragment extends Fragment
             }
         });
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+        CalenderRecycleView.setLayoutManager(linearLayoutManager);
+        //calenderApater = new CalenderApater(CalModel);
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE");
+        SimpleDateFormat sdf1 = new SimpleDateFormat("MMM d");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy"); //12-7-2020
+
+        for (int i = 0; i < 5; i++) {
+            Calendar calendar = new GregorianCalendar();
+
+            Calendar cc = Calendar.getInstance();
+            mHour = cc.get(Calendar.HOUR_OF_DAY);
+             da = cc.get(Calendar.DAY_OF_MONTH);
+             mo = cc.get(Calendar.MONTH);
+             ye = cc.get(Calendar.YEAR);
+
+            calendar.add(Calendar.DATE, i);
+            String day = sdf.format(calendar.getTime());
+            String date = sdf1.format(calendar.getTime());
+            fullDate = sdf2.format(calendar.getTime());
+
+            Log.i("Days", day);
+            Log.i("Days", date);
+            Log.i("Days", fullDate);//ruk ek min okay
+            CalModel.add(new CalenderModel(day, date, fullDate,mHour));
+
+        }
+
+        calenderApater = new CalenderApater(CalModel,getContext(), new RecycleViewClick() {
+            @Override
+            public void onClick(View view, int position) {
+                cd=CalModel.get(position).getFulldate();
+                ct=CalModel.get(position).getTime();
+                teed.setText(cd);
+            }
+        });
+
+        CalenderRecycleView.setAdapter(calenderApater);
+        calenderApater.getFullDateListener(new CalenderApater.GetFullDateListener() {
+            @Override
+            public void getFullDateListener(String date) {
+                ap_selected_date = calenderApater.fulldate;
+                current_time=calenderApater.time;
+
+            }
+        });
+
+        SharedPreferences preferencesdd = getActivity().getSharedPreferences("date", MODE_PRIVATE);
+        SharedPreferences.Editor editorrr = preferencesdd.edit();
+        String datedd = preferencesdd.getString("fulldate", "");;
+        editorrr.apply();
+
+        String ccdate = da+"-"+mo+1+"-"+ye;
+
+        if (datedd.equals(ccdate)){
+            if (mHour>=0){
+                radioButtonOne.setVisibility(View.GONE);
+            }
+            else {
+                radioButtonOne.setVisibility(View.VISIBLE);
+                radioButtonThree.setVisibility(View.VISIBLE);
+            }
+            if (mHour>=16){
+                radioButtonOne.setVisibility(View.GONE);
+                radioButtonThree.setVisibility(View.GONE);
+            }
+            else {
+                radioButtonOne.setVisibility(View.VISIBLE);
+                radioButtonThree.setVisibility(View.VISIBLE);
+            }
+        }
+        else {
+            radioButtonOne.setVisibility(View.VISIBLE);
+            radioButtonThree.setVisibility(View.VISIBLE);
+        }
+
         Radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -228,35 +308,6 @@ public class Cart_Fragment extends Fragment
                         SelectTime = "5:30 PM to 9:30 PM";
                         Gone();
                 }
-            }
-        });
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-        CalenderRecycleView.setLayoutManager(linearLayoutManager);
-        //calenderApater = new CalenderApater(CalModel);
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE");
-        SimpleDateFormat sdf1 = new SimpleDateFormat("MMM d");
-        SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy"); //12-7-2020
-
-        for (int i = 0; i < 5; i++) {
-            Calendar calendar = new GregorianCalendar();
-            calendar.add(Calendar.DATE, i);
-            String day = sdf.format(calendar.getTime());
-            String date = sdf1.format(calendar.getTime());
-            String fullDate = sdf2.format(calendar.getTime());
-            Log.i("Days", day);
-            Log.i("Days", date);
-            Log.i("Days", fullDate);
-            CalModel.add(new CalenderModel(day, date, fullDate));
-
-        }
-
-        calenderApater = new CalenderApater(getContext(),CalModel);
-        CalenderRecycleView.setAdapter(calenderApater);
-        calenderApater.getFullDateListener(new CalenderApater.GetFullDateListener() {
-            @Override
-            public void getFullDateListener(String date) {
-                ap_selected_date = calenderApater.fulldate;
-
             }
         });
 

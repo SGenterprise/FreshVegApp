@@ -38,7 +38,7 @@
                 android:text="Profile"
                 android:paddingLeft="8dp"
                 android:textColor="@color/grey_dark"
-                android:textSize="20sp"
+                android:textSize="20dp"
                 android:paddingStart="8dp" />
 <LinearLayout
     android:layout_width="match_parent"
@@ -119,7 +119,7 @@
             android:src="@drawable/ic_done_black_24dp"
             android:layout_gravity="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textStyle="bold"
             />
     </LinearLayout>
@@ -147,7 +147,7 @@
                     android:fontFamily="@font/helveticaneuelt"
                     android:text="Name:"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -160,7 +160,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:visibility="visible"
                     />
                 <EditText
@@ -173,7 +173,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:visibility="gone"
                     />
             </LinearLayout>
@@ -200,7 +200,7 @@
                     android:fontFamily="@font/helveticaneuelt"
                     android:text="Email ID:"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -213,7 +213,7 @@
                     android:fontFamily="@font/helveticaneuelt"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:visibility="visible"/>
                 <EditText
                     android:id="@+id/edit_email"
@@ -225,7 +225,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:visibility="gone"
                     />
             </LinearLayout>
@@ -253,7 +253,7 @@
                     android:fontFamily="@font/helveticaneuelt"
                     android:text="Age:"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -266,7 +266,7 @@
                     android:text=""
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:visibility="visible"
                     />
                 <EditText
@@ -279,7 +279,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:visibility="gone"
                     />
             </LinearLayout>
@@ -307,7 +307,7 @@
                     android:fontFamily="@font/helveticaneuelt"
                     android:text="Number:"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -320,7 +320,7 @@
                     android:text=""
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     />
             </LinearLayout>
 

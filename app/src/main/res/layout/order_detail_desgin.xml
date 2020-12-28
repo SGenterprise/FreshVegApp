@@ -2,10 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <include
         android:id="@+id/toolbar_back"
         layout="@layout/tootlbar_back" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/paynow"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="@color/light_black"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PAY"
+            android:layout_gravity="center"
+            android:fontFamily="@font/calibri"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_margin="4dp"
+            />
+    </androidx.cardview.widget.CardView>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,6 +55,7 @@
                 android:text="mm/dd/yyyy"
                 android:layout_marginTop="5dp"
                 android:textStyle="bold"
+                android:textSize="16dp"
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
@@ -49,6 +73,7 @@
             android:layout_height="wrap_content"
             android:text="Order ID"
             android:lines="1"
+            android:textSize="16dp"
             android:textColor="@color/black"
             android:fontFamily="@font/helveticaneuelt"
             />
@@ -58,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:text="hfhfhfhfhf"
                 android:paddingLeft="10dp"
+                android:textSize="16dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
                 />
@@ -73,6 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rs."
+                android:textSize="16dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
                 />
@@ -81,6 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:textSize="16dp"
                 android:paddingLeft="5dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
@@ -99,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:text="Order Status: "
                 android:textColor="@color/black"
+                android:textSize="16dp"
                 android:fontFamily="@font/helveticaneuelt"
                 />
             <TextView
@@ -108,6 +137,7 @@
                 android:text=""
                 android:textAllCaps="true"
                 android:paddingLeft="5dp"
+                android:textSize="16dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
                 />
@@ -125,6 +155,7 @@
                     android:layout_height="wrap_content"
                     android:text="Payment Type: "
                     android:textColor="@color/black"
+                    android:textSize="16dp"
                     android:fontFamily="@font/helveticaneuelt"
                     />
                 <TextView
@@ -133,6 +164,7 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textAllCaps="true"
+                    android:textSize="16dp"
                     android:paddingLeft="5dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
@@ -149,6 +181,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
                 android:layout_gravity="center"
+                android:textSize="16dp"
                 android:text="DELIVERY DETAILS"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,6 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name: "
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
                     />
@@ -175,6 +209,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
+                    android:textSize="16dp"
                     android:paddingLeft="5dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
@@ -191,6 +226,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Number: "
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
                     />
@@ -199,6 +235,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
+                    android:textSize="16dp"
                     android:paddingLeft="5dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
@@ -210,6 +247,7 @@
                 android:text="Delivery Address: "
                 android:textColor="@color/black"
                 android:layout_marginLeft="5dp"
+                android:textSize="16dp"
                 android:fontFamily="@font/helveticaneuelt"
                 />
             <TextView
@@ -220,6 +258,7 @@
                 android:layout_marginLeft="5dp"
                 android:text="full address"
                 android:textColor="@color/black"
+                android:textSize="16dp"
                 android:fontFamily="@font/helveticaneuelt"
                 />
             <LinearLayout
@@ -234,6 +273,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Landmark: "
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
                     />
@@ -243,6 +283,7 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:paddingLeft="5dp"
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/helveticaneuelt"
                     />
@@ -259,6 +300,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="Deliver On"
+                   android:textSize="16dp"
                    android:layout_marginRight="10dp"
                    android:textColor="@color/black"
                    android:fontFamily="@font/helveticaneuelt"
@@ -272,6 +314,7 @@
                    android:textColor="@color/black"
                    android:fontFamily="@font/helveticaneuelt"
                    android:visibility="gone"
+                   android:textSize="16dp"
                    />
                <TextView
                    android:id="@+id/asap"
@@ -312,6 +355,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/grey"
             android:layout_gravity="center"
+            android:textSize="16dp"
             android:text="PAYMENT SUMMARY"/>
 
         <LinearLayout
@@ -335,7 +379,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/light_black"
-                android:text="Product MRP."/>
+                android:text="Product MRP."
+                android:textSize="16dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -354,6 +399,7 @@
                 android:fontFamily="@font/helveticaneuelt"
                 android:textStyle="bold"
                 android:text="0"
+                android:textSize="16dp"
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <RelativeLayout
@@ -366,6 +412,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/light_black"
                 android:layout_centerVertical="true"
+                android:textSize="16dp"
                 android:text="Coupon Discount"/>
 
             <TextView
@@ -387,7 +434,7 @@
                 android:textColor="@color/green"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/helveticaneuelt"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:text=" -₹"/>
             <TextView
                 android:id="@+id/coudis"
@@ -397,6 +444,7 @@
                 android:textColor="@color/green"
                 android:textStyle="bold"
                 android:layout_centerVertical="true"
+                android:textSize="16dp"
                 android:fontFamily="@font/helveticaneuelt"
                 android:text="0" />
         </RelativeLayout>
@@ -409,6 +457,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/light_black"
+                android:textSize="16dp"
                 android:text="@string/taxes_charges"/>
 
             <TextView
@@ -427,6 +476,7 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/helveticaneuelt"
                 android:textStyle="bold"
+                android:textSize="16dp"
                 android:text="0"
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
@@ -438,6 +488,7 @@
                 android:id="@+id/j11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
                 android:textColor="@color/light_black"
                 android:text="Delivery Charges"/>
             <LinearLayout
@@ -469,6 +520,7 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/helveticaneuelt"
                 android:textStyle="bold"
+                android:textSize="16dp"
                 android:text="0"
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
@@ -526,7 +578,7 @@
             android:text="Call Us"
             android:gravity="center"
             android:paddingEnd="10dp"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:paddingStart="10dp"
             android:textColor="@color/white"
             />

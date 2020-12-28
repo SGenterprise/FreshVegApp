@@ -54,7 +54,7 @@ public class PaytmentOptions extends AppCompatActivity implements PaymentResultL
     RadioButton Rgpay, Rphonepe ,Rpaytm,Rbhim,Rrozarpay,Rcod;
     LinearLayout Lgpay, Lphonepe ,Lpaytm,Lbhim,Lrozarpay,Lcod;
     String Package;
-    String order_idd,txt_email,txt_num,finaltotal,discount,couponname,old,upiId = "Shreedhariig@paytm",name ="Shreedhar Vivek Gupta",note="";
+    String order_idd,txt_email,txt_num,finaltotal,discount,couponname,old,upiId = "8779100717-1@okbizaxis",name ="Freshveg",note="";
     RelativeLayout pay;
     DatabaseReference reff,refff;
     String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
@@ -303,12 +303,19 @@ public class PaytmentOptions extends AppCompatActivity implements PaymentResultL
         finaltotal = String.valueOf(Integer.parseInt(finaltotal)*100);
     }
     private void payUsingUpi(String finaltotal, String upiId,String name,String note) {
-        Uri uri = Uri.parse("upi://pay").buildUpon()
-                .appendQueryParameter("pa", upiId)
-                .appendQueryParameter("pn", name)
-                .appendQueryParameter("tn", note)
-                .appendQueryParameter("am", finaltotal)
-                .appendQueryParameter("cu", "INR")
+//        Uri uri = Uri.parse("upi://pay").buildUpon()
+        Uri uri =
+                new Uri.Builder()
+                        .scheme("upi")
+                        .authority("pay")
+//
+                .appendQueryParameter("pa",upiId)
+                .appendQueryParameter("pn",name)
+                .appendQueryParameter("mc","5411")
+                .appendQueryParameter("tn",note)
+                .appendQueryParameter("tr","78773873073")
+                .appendQueryParameter("am",finaltotal)
+                .appendQueryParameter("cu","INR")
                 .build();
         Intent upiPayIntent = new Intent(Intent.ACTION_VIEW);
         upiPayIntent.setData(uri);
@@ -552,7 +559,7 @@ public class PaytmentOptions extends AppCompatActivity implements PaymentResultL
         order_pojo.setDaddress(ad1);
         order_pojo.setDhousenoandBuld(h1);
         order_pojo.setDnumber(dnumber);
-        order_pojo.setDcxname(name);
+        order_pojo.setDcxname(dname);
         order_pojo.setPaymentType(paytype);
         order_pojo.setDlandmark(landmark);
         order_pojo.setLatitude(lati);
@@ -574,9 +581,14 @@ public class PaytmentOptions extends AppCompatActivity implements PaymentResultL
         DatabaseReference refer = FirebaseDatabase.getInstance().getReference("Cart_Items").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         refer.removeValue();
 
-        Toast.makeText(this, "Order Placed successfully ", Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(PaytmentOptions.this, Firstactivity.class);
+        SharedPreferences prr = getSharedPreferences("Thankyou", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editord = prr.edit();
+        editord.putString("OD_ID",order_idd);
+        editord.apply();
+
+        Intent i = new Intent(PaytmentOptions.this, Thankyou.class);
         startActivity(i);
         finish();
+
     }
 }

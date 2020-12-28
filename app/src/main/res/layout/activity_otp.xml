@@ -43,7 +43,7 @@
                 android:gravity="center"
                 android:text="Verification Code"
                 android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/text2"
@@ -71,7 +71,7 @@
                     android:fontFamily="@font/helveticaneuelt"
                     android:text="+91"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/text5"
@@ -80,7 +80,7 @@
                     android:text=""
                     android:layout_above="@+id/editTextCode"
                     android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     android:textColor="@color/white" />
             </LinearLayout>
 
@@ -107,7 +107,7 @@
                     android:inputType="number"
                     android:padding="10dp"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     app:itemCount="6"
                     app:itemHeight="48dp"
                     app:itemRadius="10dp"
@@ -134,7 +134,7 @@
                     android:fontFamily="@font/helveticaneuelt"
                     android:text="If still haven't received OTP click "
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:id="@+id/otpCounter"
@@ -144,7 +144,7 @@
                     android:text="00:00"
                     android:padding="3dp"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     />
                 <androidx.cardview.widget.CardView
                     android:id="@+id/resendOtp"
@@ -163,7 +163,7 @@
                         android:textStyle="bold"
                         android:padding="8dp"
                         android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textSize="15dp"
                         />
 
 
@@ -190,7 +190,7 @@
                             android:text="Submit"
                             android:gravity="center"
                             android:textStyle="bold"
-                            android:textSize="18sp"
+                            android:textSize="18dp"
                             />
 
                     </RelativeLayout>
@@ -215,7 +215,7 @@
                     android:text="Submit"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     />
 
             </RelativeLayout>
@@ -240,7 +240,7 @@
                     android:text="Resend OTP"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:textSize="18dp"
                     />
 
             </RelativeLayout>

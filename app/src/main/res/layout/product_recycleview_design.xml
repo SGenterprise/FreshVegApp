@@ -56,6 +56,7 @@
                         android:fontFamily="@font/calibri"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="12dp"
+                        android:textSize="14dp"
                         android:textColor="@color/white"
                         />
                     <TextView
@@ -64,6 +65,7 @@
                         android:text="% Off"
                         android:fontFamily="@font/calibri"
                         android:layout_toRightOf="@+id/off"
+                        android:textSize="14dp"
                         android:layout_centerVertical="true"
                         android:textColor="@color/white"
                         />
@@ -100,10 +102,11 @@
             android:layout_height="wrap_content"
              android:layout_marginTop="5dp"
             android:text="Category Name"
-             android:textStyle="bold"
-            android:textColor="@color/black"
+             android:maxLines="1"
+             android:textAllCaps="true"
+            android:textColor="@color/grey"
             android:fontFamily="@font/helveticaneuelt"
-            android:textSize="15sp"
+            android:textSize="12dp"
             />
             <TextView
                 android:id="@+id/pro_name"
@@ -112,9 +115,10 @@
                 android:text="Product name"
                 android:textStyle="bold"
                 android:layout_marginTop="5dp"
+                android:maxLines="1"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 />
 
                     <TextView
@@ -123,9 +127,10 @@
                         android:layout_height="wrap_content"
                         android:text="Product Quantity"
                         android:layout_marginTop="5dp"
+                        android:maxLines="2"
                         android:textColor="@color/grey"
                         android:fontFamily="@font/helveticaneuelt"
-                        android:textSize="13sp"
+                        android:textSize="14dp"
                         />
 
             <LinearLayout
@@ -142,7 +147,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:fontFamily="@font/calibri"
-                    android:textSize="20sp"
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:id="@+id/price"
@@ -153,25 +158,25 @@
                     android:textStyle="bold"
                     android:layout_marginEnd="5dp"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="20sp"
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:id="@+id/rupeesym"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="₹"
-                    android:textColor="@color/black"
+                    android:textColor="@color/grey"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="12dp"
                     />
                 <TextView
                     android:id="@+id/mrp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:textColor="@color/black"
+                    android:textColor="@color/grey"
                     android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="14sp"
+                    android:textSize="12dp"
                     />
             </LinearLayout>
 

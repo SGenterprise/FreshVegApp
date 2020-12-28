@@ -81,7 +81,7 @@ public class Product_recycleview extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //dismissing the progress dialog
                 uploads.clear();
-                progressDialog.dismiss();
+
                 //iterating through all the values in database
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     UploadPojo upload = postSnapshot.getValue(UploadPojo.class);
@@ -93,6 +93,7 @@ public class Product_recycleview extends Fragment {
                 adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+                progressDialog.dismiss();
             }
 
             @Override
@@ -160,7 +161,6 @@ public class Product_recycleview extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //dismissing the progress dialog
                 uploads.clear();
-                progressDialog.dismiss();
                 //iterating through all the values in database
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     UploadPojo upload = postSnapshot.getValue(UploadPojo.class);
@@ -176,6 +176,7 @@ public class Product_recycleview extends Fragment {
                 adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+                progressDialog.dismiss();
             }
 
             @Override
@@ -193,7 +194,6 @@ public class Product_recycleview extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //dismissing the progress dialog
                 uploads.clear();
-                progressDialog.dismiss();
                 //iterating through all the values in database
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     UploadPojo upload = postSnapshot.getValue(UploadPojo.class);
@@ -205,6 +205,7 @@ public class Product_recycleview extends Fragment {
                 adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+                progressDialog.dismiss();
             }
 
             @Override

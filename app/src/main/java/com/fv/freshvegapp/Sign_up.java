@@ -61,6 +61,7 @@ public class Sign_up extends AppCompatActivity {
                     editText.requestFocus();
                     return;
                 }
+
                 String phonenumber = "+" + code + number;
                 Intent intent = new Intent(Sign_up.this, Otp.class);
                 intent.putExtra("phonenumber",phonenumber);
@@ -68,7 +69,6 @@ public class Sign_up extends AppCompatActivity {
 
             }
         });
-
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
