@@ -38,7 +38,7 @@
             android:fontFamily="@font/helveticaneuelt"
             android:text="We will send you One time SMS message for verification."
             android:textStyle="bold"
-            android:textSize="14sp"
+            android:textSize="14dp"
             />
 
 <LinearLayout
@@ -52,7 +52,7 @@
         android:layout_height="match_parent"
         android:text="+91"
         android:layout_marginTop="8dp"
-        android:textSize="18sp"
+        android:textSize="18dp"
         android:fontFamily="@font/calibri"
     />
     <EditText
@@ -66,7 +66,7 @@
         android:inputType="number"
         android:maxLines="1"
         android:maxLength="10"
-        android:textSize="18sp" />
+        android:textSize="18dp" />
 </LinearLayout>
 
 

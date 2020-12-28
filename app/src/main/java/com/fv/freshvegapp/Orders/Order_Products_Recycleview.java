@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +37,7 @@ public class Order_Products_Recycleview extends AppCompatActivity {
     private Order_products_Adaptor adapter;
     private DatabaseReference mDatabase,reff;
     private ProgressDialog progressDialog;
+    CardView paynow;
     private List<CartPojo> uploads;
     TextView orderdate,orderid,totalamaount,idcall,orderstatus,paytype,deliverycharge,taxes,houseandbuld,fulladd,ddate,appBarTV,t42,tmrp,Dname_id,Dnum_id,Dlandmark_id;
     TextView coupan,dliveryon,asapdelivery,coupanname;
@@ -77,6 +80,7 @@ public class Order_Products_Recycleview extends AppCompatActivity {
             }
         });
 
+        paynow  =  findViewById(R.id.paynow);
         orderdate =  findViewById(R.id.orderdate_id);
         orderid =  findViewById(R.id.order_id);
         totalamaount =  findViewById(R.id.Total_id);
@@ -173,6 +177,19 @@ public class Order_Products_Recycleview extends AppCompatActivity {
 
             }
 
+        });
+
+        if (paytypes.equals("CASH ON DELIVERY")){
+            paynow.setVisibility(View.VISIBLE);
+        }
+        else {
+            paynow.setVisibility(View.GONE);
+        }
+          paynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Order_Products_Recycleview.this, "We are working on this Option. wil update soon", Toast.LENGTH_SHORT).show();
+            }
         });
 
     }

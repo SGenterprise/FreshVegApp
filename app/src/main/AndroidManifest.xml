@@ -64,6 +64,10 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".Orders.OrderPaytmentOptions"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Sign_up"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />

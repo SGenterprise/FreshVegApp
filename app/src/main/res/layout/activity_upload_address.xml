@@ -123,7 +123,7 @@
                             android:lines="1"
                             android:imeOptions="actionDone"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             />
                         <EditText
                             android:id="@+id/num"
@@ -136,7 +136,7 @@
                             android:hint="Number"
                             android:textColor="@color/black"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             />
                     </LinearLayout>
 
@@ -186,7 +186,7 @@
                                 android:lines="1"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/helveticaneuelt"
-                                android:textSize="14sp"
+                                android:textSize="14dp"
                                 />
                         </LinearLayout>
                         <LinearLayout
@@ -206,7 +206,7 @@
                                 android:lines="1"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/helveticaneuelt"
-                                android:textSize="14sp"
+                                android:textSize="14dp"
                                 />
                         </LinearLayout>
 
@@ -244,17 +244,18 @@
                             android:textStyle="bold"
                             android:textColor="@color/black"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             />
                         <TextView
                             android:id="@+id/ad1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:maxEms="150"
+                            android:text=""
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             />
                     </LinearLayout>
 

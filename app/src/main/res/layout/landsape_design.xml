@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:id="@+id/itemview2"
     android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
         >
-
         <androidx.cardview.widget.CardView
             android:layout_width="140dp"
             android:layout_height="wrap_content"
@@ -45,7 +44,8 @@
                             android:id="@+id/off"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="50"
+                            android:text=""
+                            android:textSize="13dp"
                             android:fontFamily="@font/calibri"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="12dp"
@@ -55,6 +55,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="% Off"
+                            android:textSize="13dp"
                             android:fontFamily="@font/calibri"
                             android:layout_toRightOf="@+id/off"
                             android:layout_centerVertical="true"
@@ -93,58 +94,57 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             >
+
             <TextView
                 android:id="@+id/txt_cat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Category Name"
-                android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
-                android:textSize="15sp"
-                />
+                android:text="Category Name"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:textColor="@color/grey"
+                android:textSize="12dp" />
+
             <TextView
                 android:id="@+id/pro_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Product name"
                 android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:maxLines="2"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 />
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/quantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Product Quantity"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/grey"
+                android:maxLines="1"
+                android:fontFamily="@font/helveticaneuelt"
+                android:textSize="14dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 >
+
                 <LinearLayout
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     >
-                    <TextView
-                        android:id="@+id/quantity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Product Quantity"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/grey"
-                        android:fontFamily="@font/helveticaneuelt"
-                        android:textSize="13sp"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Product Weight"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/grey"
-                        android:fontFamily="@font/helveticaneuelt"
-                        android:textSize="13sp"
-                        />
+
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -159,36 +159,36 @@
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             android:fontFamily="@font/calibri"
-                            android:textSize="20sp"
+                            android:textSize="16dp"
                             />
+
                         <TextView
                             android:id="@+id/price"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
+                            android:layout_height="match_parent"
                             android:layout_marginEnd="5dp"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="20sp"
-                            />
+                            android:text="0"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
                         <TextView
                             android:id="@+id/rupeesym"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="₹"
-                            android:textColor="@color/black"
+                            android:textColor="@color/grey"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="12dp"
                             />
                         <TextView
                             android:id="@+id/mrp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:textColor="@color/black"
+                            android:textColor="@color/grey"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="12dp"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -198,6 +198,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginTop="2dp"
                     android:gravity="bottom"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"

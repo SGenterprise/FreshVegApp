@@ -94,7 +94,7 @@
             android:fontFamily="@font/helveticaneuelt"
             android:paddingLeft="20dp"
             android:text="Checkout"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:textColor="@color/white"
             android:gravity="end"
             android:layout_alignParentRight="true"

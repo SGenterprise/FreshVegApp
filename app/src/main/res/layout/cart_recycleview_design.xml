@@ -52,12 +52,14 @@
                             android:fontFamily="@font/calibri"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="12dp"
+                            android:textSize="16dp"
                             android:textColor="@color/white"
                             />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="% Off"
+                            android:textSize="16dp"
                             android:fontFamily="@font/calibri"
                             android:layout_toRightOf="@+id/off"
                             android:layout_centerVertical="true"
@@ -103,36 +105,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
              android:layout_marginTop="8dp"
-            android:textColor="@color/black"
+             android:textAllCaps="true"
+            android:textColor="@color/grey"
             android:fontFamily="@font/helveticaneuelt"
-            android:textSize="15sp"
+            android:textSize="12dp"
             />
             <TextView
                 android:id="@+id/pro_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:fontFamily="@font/helveticaneuelt"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 />
-
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:maxLines="1"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/helveticaneuelt"
+                android:textSize="14dp"
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/quantity"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:lines="2"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/helveticaneuelt"
-                    android:textSize="13sp"
-                    />
+
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
@@ -147,7 +151,7 @@
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="Rs."
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/price"
@@ -158,7 +162,7 @@
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/rupeesym"
@@ -167,8 +171,8 @@
                         android:layout_marginTop="2dp"
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="Rs."
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/mrp"
@@ -177,8 +181,8 @@
                         android:layout_marginTop="2dp"
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -188,20 +192,19 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         >
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
                             android:orientation="horizontal"
                             >
                         <TextView
@@ -272,38 +275,36 @@
                             </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:orientation="horizontal"
                             android:layout_marginTop="2dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="end"
-                            android:gravity="bottom"
+                            android:gravity="center"
                             android:layout_weight="1"
                             >
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="15dp"
                                 android:textColor="@color/black"
                                 android:text="Rs."
                                 android:fontFamily="@font/helveticaneuelt"
-                                android:textSize="14sp"
+                                android:textSize="14dp"
                                 />
                         <TextView
                             android:id="@+id/subtotal"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="15dp"
                             android:textColor="@color/black"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             />
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="15dp"
                             android:textColor="@color/black"
                             android:text="/-"
                             android:fontFamily="@font/helveticaneuelt"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             />
                         </LinearLayout>
                     </LinearLayout>

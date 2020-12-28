@@ -33,6 +33,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.fv.freshvegapp.Address.Address_Recycleview;
+import com.fv.freshvegapp.Address.Address_Upload;
 import com.fv.freshvegapp.Cart.Cart_Fragment;
 import com.fv.freshvegapp.ContactUs.Contact_fragment;
 import com.fv.freshvegapp.Orders.Order_Recycleview;
@@ -60,7 +61,7 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
     private TextView appBarTV,name;
     private long backPressedTime;
     private Toast backToast;
-    String key, k,cart,select_cart,orderkey,couponkey;
+    String key, k,cart,select_cart,orderkey,couponkey,thankkey;
     ImageView imageView;
     String url,img;
     RelativeLayout cartlay;
@@ -87,6 +88,14 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
         OneSignal.setSubscription(false);
 
         Intent intent = getIntent();
+
+
+
+        SharedPreferences preoo = getSharedPreferences("Thankyou",MODE_PRIVATE);
+        SharedPreferences.Editor editoo = preoo.edit();
+        thankkey = preoo.getString("thankkey", "");
+        editoo.apply();
+
         number = intent.getStringExtra("phone");
         SharedPreferences preferences = getSharedPreferences("address_rec",MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -119,6 +128,13 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
             SharedPreferences.Editor editorr = preferences.edit();
             editorr.clear();
             editorr.apply();
+        }
+        else if (thankkey.equals("9")){
+            order_frag();
+            SharedPreferences preooo = getSharedPreferences("Thankyou", MODE_PRIVATE);
+            SharedPreferences.Editor editooo = preooo.edit();
+            editooo.clear();
+            editooo.apply();
         }
         else if (couponkey.equals("1")){
             cart_frag();
@@ -456,7 +472,10 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
         public void onBackPressed() {
             if (drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START);
-            } else {
+            }
+
+
+            else {
                 if (fragment instanceof Product_recycleview) {
 
                     cartlay.setVisibility(View.VISIBLE);
@@ -470,8 +489,25 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
                     }
                     backPressedTime = System.currentTimeMillis();
                 } else {
-                        showhome();
+                    showhome();
                 }
             }
+             if (fragment instanceof Main_recycleview) {
+                if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                    backToast.cancel();
+                    super.onBackPressed();
+
+                }
+                // nhi ho raha hai solve 
+//                else {
+//                    backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+//                    backToast.show();
+//                }
+                backPressedTime = System.currentTimeMillis();
+            }
+             if (!(fragment instanceof Main_recycleview)){
+                showhome();
+            }
+
     }
-}
+    }

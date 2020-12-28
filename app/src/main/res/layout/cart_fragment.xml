@@ -46,7 +46,7 @@
                         android:fontFamily="@font/helveticaneuelt"
                         android:text="Delivery Address"
                         android:textColor="@color/black"
-                        android:textSize="16sp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/changeaddress"
@@ -58,7 +58,7 @@
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
                         android:paddingStart="5dp"
-                        android:textSize="16sp"
+                        android:textSize="16dp"
                         android:text="change"
                         android:visibility="gone" />
                 </RelativeLayout>
@@ -72,7 +72,7 @@
                     android:paddingBottom="5dp"
                     android:layout_marginTop="5dp"
                     android:textAllCaps="true"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:text="Add Address" />
 
                         <TextView
@@ -82,7 +82,7 @@
                             android:textColor="@color/black"
                             android:lines="1"
                             android:fontFamily="@font/calibri"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             android:text=""
                             android:visibility="gone"/>
 
@@ -127,7 +127,7 @@
                     android:textColor="@color/black"
                     android:layout_below="@+id/jj"
                     android:fontFamily="@font/calibri"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:text=""
                     android:visibility="gone"/>
 
@@ -138,7 +138,7 @@
                         android:textColor="@color/black"
                         android:lines="1"
                         android:fontFamily="@font/calibri"
-                        android:textSize="14sp"
+                        android:textSize="14dp"
                         android:text=""
                         android:visibility="gone"/>
 
@@ -159,7 +159,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
                             android:fontFamily="@font/calibri"
-                            android:textSize="14sp"
+                            android:textSize="14dp"
                             android:text=""
                             android:visibility="visible"/>
                         <TextView
@@ -168,7 +168,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
                             android:fontFamily="@font/calibri"
-                            android:textSize="14sp"
+                            android:textSize="12dp"
                             android:text="Deliver on"
                             android:visibility="gone"/>
                         <TextView
@@ -177,7 +177,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
                             android:fontFamily="@font/calibri"
-                            android:textSize="14sp"
+                            android:textSize="12dp"
                             android:layout_marginStart="5dp"
                             android:text=""
                             android:layout_toRightOf="@+id/textdelivertill"
@@ -189,7 +189,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
                             android:fontFamily="@font/calibri"
-                            android:textSize="16sp"
+                            android:textSize="12dp"
                             android:layout_marginStart="5dp"
                             android:text=""
                             android:layout_toRightOf="@id/date_text"
@@ -200,15 +200,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/calibri"
-                            android:text="Schedule delivery"
+                            android:text="Schedule \n delivery"
                             android:textAllCaps="true"
                             android:paddingStart="5dp"
                             android:paddingTop="5dp"
                             android:textStyle="bold"
                             android:textColor="@color/red2"
-                            android:textSize="12sp"
+                            android:textSize="12dp"
                             android:layout_alignParentEnd="true"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             />
                     </RelativeLayout>
 
@@ -221,7 +221,7 @@
                     android:gravity="center"
                     android:text="Choose Delivery Date &amp; Time"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:visibility="visible"/>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -248,6 +248,7 @@
                         android:layout_marginLeft="10dp"
                         android:background="@android:color/white"
                         android:shadowRadius="5"
+                        android:textSize="16dp"
                         android:fontFamily="@font/calibri"
                         android:text="8:30 AM to 2:30 PM" />
 
@@ -259,6 +260,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:shadowRadius="5"
+                        android:textSize="16dp"
                         android:background="@android:color/white"
                         android:fontFamily="@font/calibri"
                         android:text="5:30 PM to 9:30 PM" />
@@ -292,6 +294,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/light_black"
                 android:fontFamily="@font/calibri"
+                android:textSize="16dp"
                 android:text="Product MRP."/>
 
             <TextView
@@ -310,6 +313,7 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/calibri"
                 android:textStyle="bold"
+                android:textSize="16dp"
                 android:text="0"
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
@@ -324,6 +328,7 @@
                 android:textColor="@color/light_black"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/calibri"
+                android:textSize="16dp"
                 android:text="Coupon Discount"/>
             <TextView
                 android:id="@+id/add_id"
@@ -332,6 +337,7 @@
                 android:layout_toRightOf="@id/hf"
                 android:layout_marginLeft="10dp"
                android:layout_centerVertical="true"
+                android:textSize="16dp"
                 android:textColor="@color/red"
                 android:fontFamily="@font/calibri"
                 android:text="ADD"/>
@@ -365,6 +371,7 @@
                 android:layout_alignParentEnd="true"
                 android:textColor="@color/green"
                 android:textStyle="bold"
+                android:textSize="16dp"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/calibri"
                 android:text="0"
@@ -380,6 +387,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/light_black"
+                    android:textSize="16dp"
                     android:text="@string/taxes_charges"/>
 
                 <TextView
@@ -398,6 +406,7 @@
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/calibri"
                     android:textStyle="bold"
+                    android:textSize="16dp"
                     android:text="0"
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
@@ -411,12 +420,14 @@
             android:layout_height="wrap_content"
             android:textColor="@color/light_black"
                 android:fontFamily="@font/calibri"
+                android:textSize="16dp"
             android:text="Delivery Charges"/>
             <LinearLayout
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_alignParentTop="true"
                 android:padding="2dp"
+                android:textSize="16dp"
                 android:layout_toRightOf="@id/j11"
                 >
             <ImageView
@@ -431,7 +442,7 @@
                 android:layout_toStartOf="@+id/deliverycharge"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/calibri"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:text="₹"/>
             <TextView
                 android:id="@+id/deliverycharge"
@@ -440,6 +451,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/calibri"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 android:text="0" />
         </RelativeLayout>
@@ -452,7 +464,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/calibri"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:textColor="@color/black"
                 android:text="Total Amount "/>
             <TextView
@@ -461,7 +473,7 @@
                 android:layout_toStartOf="@+id/t42"
                 android:layout_centerVertical="true"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:fontFamily="@font/calibri"
                 android:text="₹"/>
 
@@ -473,7 +485,7 @@
                 android:fontFamily="@font/helveticaneuelt"
                 android:text="0"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
         </RelativeLayout>
         </LinearLayout>
@@ -516,7 +528,7 @@
                     android:layout_height="wrap_content"
                     android:text="Add items worth ₹"
                     android:fontFamily="@font/calibri"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     />
                 <TextView
@@ -524,7 +536,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:fontFamily="@font/calibri"
                     android:textColor="@color/black"
                     />
@@ -532,7 +544,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" more for FREE delivery"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:fontFamily="@font/calibri"
                     android:textColor="@color/black"
                     />
@@ -542,8 +554,9 @@
         <RelativeLayout
             android:id="@+id/emptycart_lay"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="top"
+            android:background="@color/white"
             android:orientation="vertical"
             android:visibility="gone"
             >
@@ -565,7 +578,7 @@
                 android:layout_height="wrap_content"
                 android:text="No items in your cart"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="18dp"
                 android:fontFamily="@font/calibri"
                 />
             <androidx.cardview.widget.CardView
@@ -586,6 +599,7 @@
                     android:fontFamily="@font/calibri"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
+                    android:textSize="16dp"
                     android:gravity="center"
                     />
 
@@ -663,7 +677,7 @@
             android:paddingStart="40dp"
             android:paddingBottom="20dp"
             android:text="Place Order"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:textColor="@color/white"
             android:gravity="end" />
     </RelativeLayout>
