@@ -54,7 +54,7 @@ public class PaytmentOptions extends AppCompatActivity implements PaymentResultL
     RadioButton Rgpay, Rphonepe ,Rpaytm,Rbhim,Rrozarpay,Rcod;
     LinearLayout Lgpay, Lphonepe ,Lpaytm,Lbhim,Lrozarpay,Lcod;
     String Package;
-    String order_idd,txt_email,txt_num,finaltotal,discount,couponname,old,upiId = "8779100717-1@okbizaxis",name ="Freshveg",note="";
+    String order_idd,txt_email,txt_num,finaltotal,discount,couponname,old,upiId = "freshveg@paytm",name ="Freshveg",note="";
     RelativeLayout pay;
     DatabaseReference reff,refff;
     String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
