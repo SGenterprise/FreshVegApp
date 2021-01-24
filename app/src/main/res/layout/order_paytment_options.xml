@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cart.PaytmentOptions">
+
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/pay"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Payment Options"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:background="@drawable/rec_button_black"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:gravity="center"
+        android:fontFamily="@font/verdana"
+        />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommended Payment Options"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:id="@+id/gpaylay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/gpay"
+                android:layout_marginEnd="20dp"
+                />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google Pay"
+            android:textSize="18dp"
+            android:fontFamily="@font/verdana"
+            android:textColor="@color/black"
+            />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    >
+    <RadioButton
+        android:id="@+id/radiogpay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/custom_radio_buttons"
+        android:fontFamily="@font/helveticaneuelt"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:theme="@style/RadioButtonStyle" />
+</LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/phonepaylay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/phonepe"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PhonePe"
+                android:textSize="18dp"
+                android:fontFamily="@font/verdana"
+                android:textColor="@color/black"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                >
+                <RadioButton
+                    android:id="@+id/radiophonepe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/custom_radio_buttons"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:theme="@style/RadioButtonStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/paytmlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/paytmupi"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paytm UPI"
+                android:textSize="18dp"
+                android:fontFamily="@font/verdana"
+                android:textColor="@color/black"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                >
+                <RadioButton
+                    android:id="@+id/radiopaytmpe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/custom_radio_buttons"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:theme="@style/RadioButtonStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bhim"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/gpay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bhim UPI"
+                android:textSize="18dp"
+                android:fontFamily="@font/verdana"
+                android:textColor="@color/black"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                >
+                <RadioButton
+                    android:id="@+id/radiobhimupi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/custom_radio_buttons"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:theme="@style/RadioButtonStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Other Payment Options"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:id="@+id/Rozarpaylay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/rozarpay"
+                android:layout_marginEnd="20dp"
+                />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rozarpay"
+        android:textSize="18dp"
+        android:fontFamily="@font/verdana"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="note: Rozarpay will charge 2% on total amount"
+        android:textSize="10dp"
+        android:fontFamily="@font/verdana"
+        android:textColor="@color/black"
+        />
+
+</LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:weightSum="1"
+                >
+                <RadioButton
+                    android:id="@+id/radiorozarpay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/custom_radio_buttons"
+                    android:fontFamily="@font/helveticaneuelt"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:theme="@style/RadioButtonStyle" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RadioGroup>
+
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
+<RelativeLayout
+        android:id="@+id/pay"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/red2"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pay"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:fontFamily="@font/helveticaneuelt"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
