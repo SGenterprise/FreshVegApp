@@ -89,6 +89,8 @@ public class Firstactivity extends AppCompatActivity implements NavigationView.O
 
         Intent intent = getIntent();
 
+
+
         SharedPreferences preoo = getSharedPreferences("Thankyou",MODE_PRIVATE);
         SharedPreferences.Editor editoo = preoo.edit();
         thankkey = preoo.getString("thankkey", "");
