@@ -3,6 +3,7 @@ package com.fv.freshvegapp.Products;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -31,6 +32,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -46,6 +49,7 @@ public class Product_recycleview extends Fragment {
     RelativeLayout checkout;
     String a = "";
     Query queryss;
+
 
     @Nullable
     @Override
@@ -93,6 +97,7 @@ public class Product_recycleview extends Fragment {
                 adapter = new Vege_landscape_Adaptor(getActivity(), uploads);
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
                 progressDialog.dismiss();
             }
 

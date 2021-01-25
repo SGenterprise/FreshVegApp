@@ -2,6 +2,8 @@ package com.fv.freshvegapp.Products;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +33,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 import java.util.Objects;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class Vege_landscape_Adaptor extends RecyclerView.Adapter<Vege_landscape_Adaptor.ViewHolder> {
 
 private Context context;
@@ -57,7 +61,7 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
 
     final DatabaseReference reff = FirebaseDatabase.getInstance().getReference("Cart_Items").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
     final CartPojo cartPojo = new CartPojo();
-    final String CategoryName,ProductName,ProductImage,Quantity,Price,Mrp,Count;
+    final String CategoryName,ProductName,ProductImage,ProductImage1,ProductImage2,ProductImage3,Quantity,Price,Mrp,Count;
     final String Cart_CategoryName,Cart_ProductName,Cart_ProductImage,Cart_Quantity,Cart_Price;
     Cart_CategoryName = cartPojo.getCategoryName();
     Cart_ProductName = cartPojo.getProductName();
@@ -69,6 +73,9 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
     CategoryName = upload.getCategory();
     ProductName = upload.getProduct();
     ProductImage = upload.getProduct_img();
+    ProductImage1 = upload.getProduct_img2();
+    ProductImage2 = upload.getProduct_img3();
+    ProductImage3 = upload.getProduct_img4();
     Quantity = upload.getQuantity();
     Price = upload.getPrice();
     Mrp  = upload.getMrp();
@@ -252,6 +259,30 @@ public void onBindViewHolder(final ViewHolder holder, final int position) {
             cartPojo.setCount(holder.textcount.getText().toString());
             reff.child(ProductName).setValue(cartPojo);
      //       notifyDataSetChanged();
+        }
+    });
+
+    holder.imageView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            SharedPreferences preferences = context.getSharedPreferences("Detail", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("Categoryname",CategoryName);
+            editor.putString("Productname",ProductName);
+            editor.putString("ProductImage",ProductImage);
+            editor.putString("ProductImage1",ProductImage1);
+            editor.putString("ProductImage2",ProductImage2);
+            editor.putString("ProductImage3",ProductImage3);
+            editor.putString("ProductPrice",Price);
+            editor.putString("Mrp",Mrp);
+            editor.putString("quantity",Quantity);
+            editor.putString("Count",holder.textcount.getText().toString());
+            editor.apply();
+
+            Intent i = new Intent(context, Product_detail_activity.class);
+            context.startActivity(i);
+            Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show();
         }
     });
 }

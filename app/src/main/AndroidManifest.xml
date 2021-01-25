@@ -18,7 +18,6 @@
         android:roundIcon="@mipmap/ic_launcher_background"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Products.Product_detail"></activity>
         <activity android:name=".Cart.Thankyou" />
         <activity
             android:name=".Cart.PaytmentOptions"
@@ -58,6 +57,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Coupons.Coupon_Select_Activity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Products.Product_detail_activity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity

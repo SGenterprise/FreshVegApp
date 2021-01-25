@@ -7,9 +7,14 @@
     android:orientation="vertical"
     tools:context=".Products.Product_detail_activity">
 
+    <include
+        android:id="@+id/toolbar_back"
+        layout="@layout/tootlbar_back" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_back"
         android:layout_above="@+id/idcart"
         >
     <LinearLayout
@@ -68,10 +73,12 @@
         android:layout_margin="10dp"
         >
         <LinearLayout
+            android:id="@+id/greenlay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:background="@drawable/green_stroke_rectengle"
+            android:visibility="visible"
             >
 
             <ImageView
@@ -82,11 +89,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/greenlay2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/green_stroke_rectengle"
+            android:visibility="gone"
             >
             <ImageView
                 android:id="@+id/ProductImg2"
@@ -97,14 +106,32 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/greenlay3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/green_stroke_rectengle"
+            android:visibility="gone"
             >
             <ImageView
                 android:id="@+id/ProductImg3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_menu_manage"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/greenlay4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/green_stroke_rectengle"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:id="@+id/ProductImg4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_menu_manage"
@@ -223,6 +250,34 @@
         android:textColor="@color/grey_dark"
         android:textSize="10dp"
         />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity: "
+                android:fontFamily="@font/helveticaneuelt"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:maxLines="3"
+                />
+
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500g"
+                android:fontFamily="@font/helveticaneuelt"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -307,7 +362,6 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="20dp"
                             android:layout_height="match_parent"
-                            app:cardCornerRadius="4dp"
                             android:layout_weight="1"
                             >
 
@@ -337,7 +391,6 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="20dp"
                             android:layout_height="match_parent"
-                            app:cardCornerRadius="4dp"
                             android:layout_weight="1"
                             >
                             <TextView
